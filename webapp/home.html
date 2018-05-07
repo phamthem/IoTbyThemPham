@@ -59,7 +59,7 @@
 					<i class="fa fa-tachometer feature-icon  text-primary"></i>
 				</div>
 				<div>
-					<h3 class="home-heading">TRẠNG THÁI ĐÈN LED</h3>
+					<h3 class="home-heading">trạng thái đèn led</h3>
 					<div ng-repeat="led_value in leds_status  track by $index">
 						Đèn LED thứ {{$index}} đang {{led_value ? "Bật" : "Tắt"}}. <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changeLED()" ng-model="leds_status[$index]" />
 					</div>
@@ -72,7 +72,7 @@
 					<i class="fa fa-tachometer feature-icon  text-primary"></i>
 				</div>
 				<div>
-					<h3 class="home-heading">TRẠNG THÁI mấy cái NÚT NHẤN</h3>
+					<h3 class="home-heading">trạng thái nút nhấn</h3>
 					<div ng-repeat="button_value in buttons  track by $index">
 						Nút nhấn {{$index}} đang {{button_value ? "THẢ" : "GIỮ"}}
 					</div>
