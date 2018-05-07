@@ -1,4 +1,4 @@
-angular.module('Nông Nghiệp', [
+angular.module('My App', [
     'ngRoute',
     'mobile-angular-ui',
 	'btford.socket-io'
