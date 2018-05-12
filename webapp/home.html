@@ -7,6 +7,11 @@
 				</h1>
 			</div>
 			
+			
+			
+			
+			
+			
 			<!-- Cục cảm biến mưa -->
 			<div class="list-group-item list-group-item-home">
 				<div>
@@ -17,6 +22,12 @@
 					Kết quả: {{CamBienMua}}
 				</div>
 			</div>
+			
+			
+			
+			
+			
+			
 			
 			<!-- Cục cập nhập giá trị cảm biến -->
 			<div class="list-group-item list-group-item-home">
@@ -29,6 +40,11 @@
 				</div>
 			</div>
 			
+			
+			
+			
+			
+			
 			<!-- Cục cập nhập giá trị servo -->
 			<div class="list-group-item list-group-item-home">
 				<div>
@@ -39,6 +55,11 @@
 					<input type="text" class="input text" ng-model="servoPosition" ng-change="updateServo(servoPosition)" />
 				</div>
 			</div>
+			
+			
+			
+			
+			
 			
 			<!-- Cục thay đổi chữ trên LCD-->
 			<div class="list-group-item list-group-item-home">
@@ -53,6 +74,10 @@
 			</div>
 			
 			
+			
+			
+			
+			
 			<!-- Cục thay đổi trạng thái LED -->
 			<div class="list-group-item list-group-item-home">
 				<div>
@@ -65,6 +90,23 @@
 					</div>
 				</div>
 			</div>
+			
+			
+			
+			<!-- Cục thay đổi trạng thái máy phun sương -->
+			<div class="list-group-item list-group-item-home">
+				<div>
+					<i class="fa fa-tachometer feature-icon  text-primary"></i>
+				</div>
+				<div>
+					<h3 class="home-heading">trạng thái máy phun sương</h3>
+					<div ng-repeat="phunsuong_value in phunsuongs_status  track by $index">
+						máy phun sương thứ {{$index}} đang {{phúnuong_value ? "Bật" : "Tắt"}}. <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changephunsuong()" ng-model="phunsuongs_status[$index]" />
+					</div>
+				</div>
+			</div>
+			
+			
 			
 			<!-- Cục cập nhập giá trị nút nhấn! -->
 			<div class="list-group-item list-group-item-home">
