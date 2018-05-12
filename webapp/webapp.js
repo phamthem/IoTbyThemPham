@@ -19,22 +19,12 @@ angular.module('myApp', [
 	
 	
 	////Khu 1 -- Khu cài đặt tham số 
-    //cài đặt một số tham số test chơi
+    	//cài đặt một số tham số test chơi
 	//dùng để đặt các giá trị mặc định
     	$scope.CamBienMua = "không có tín hiệu từ cảm biến";
     	$scope.leds_status = [0, 0]
-	$scope.leds_status = [0, 0]
-	$scope.lcd = ["", ""]
-	$scope.servoPosition = 0
-	$scope.buttons = [] //chả có gì cả, arduino gửi nhiêu thì nhận nhiêu!
+	$scope.phunsuongs_status = [0, 0]
 	
-	
-	
-	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
-	//các sự kiện ng-click, nhấn nút
-	$scope.updateSensor  = function() {
-		mySocket.emit("RAIN")
-	}
 	
 	
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
@@ -46,25 +36,15 @@ angular.module('myApp', [
 		}
 		mySocket.emit("LED", json)
 	}
-	$scope.changephunsuong = function() {
-		console.log("send phunsuong ", $scope.phunsuongs_status)
+	$scope.changePHUNSUONG = function() {
+		console.log("send PHUNSUONG ", $scope.phunsuongs_status)
 		
 		var json = {
 			"phunsuong": $scope.phunsuongs_status
 		}
-		mySocket.emit("phunsuong", json)
+		mySocket.emit("PHUNSUONG", json)
 	}
 	
-	//cập nhập lcd như một ông trùm 
-	$scope.updateLCD = function() {
-		
-		
-		var json = {
-			"line": $scope.lcd
-		}
-		console.log("LCD_PRINT ", $scope.lcd)
-		mySocket.emit("LCD_PRINT", json)
-	}
 	
 	//Cách gửi tham số 2: dùng biến cục bộ: servoPosition. Biến này đươc truyền từ file home.html, dữ liệu đươc truyền vào đó chính là biến toàn cục $scope.servoPosition. Cách 2 này sẽ giúp bạn tái sử dụng hàm này vào mục đích khác, thay vì chỉ sử dụng cho việc bắt sự kiện như cách 1, xem ở Khu 4 để biết thêm ứng dụng!
 	$scope.updateServo = function(servoPosition) {
@@ -99,20 +79,11 @@ angular.module('myApp', [
 	})
 	
 	
-	//khi nhận được lệnh Button
-	mySocket.on('BUTTON', function(json) {
-		//Nhận được thì in ra thôi hihi.
-		console.log("recv BUTTON", json)
-		$scope.buttons = json.data
-	})
-	
 	
 	//// Khu 4 -- Những dòng code sẽ được thực thi khi kết nối với Arduino (thông qua socket server)
 	mySocket.on('connect', function() {
 		console.log("connected")
 		mySocket.emit("RAIN") //Cập nhập trạng thái mưa
-		
-		$scope.updateServo(0) //Servo quay về góc 0 độ!. Dùng cách 2 
 	})
 		
 });
