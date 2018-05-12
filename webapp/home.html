@@ -1,12 +1,14 @@
 <div class="scrollable">
 	<div class="scrollable-content">
 		<div class="list-group text-center">
+			
+			
+			
 			<!-- cục giới thiệu -->
 			<div class="list-group-item list-group-item-home">
 				<h1>NÔNG NGHIỆP BỀN VỮNG
 				</h1>
 			</div>
-			
 			
 			
 			
@@ -40,43 +42,7 @@
 				</div>
 			</div>
 			
-			
-			
-			
-			
-			
-			<!-- Cục cập nhập giá trị servo -->
-			<div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-tachometer feature-icon  text-primary"></i>
-				</div>
-				<div>
-					<h3 class="home-heading">Cập nhập giá trị servo</h3>
-					<input type="text" class="input text" ng-model="servoPosition" ng-change="updateServo(servoPosition)" />
-				</div>
-			</div>
-			
-			
-			
-			
-			
-			
-			<!-- Cục thay đổi chữ trên LCD-->
-			<div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-tachometer feature-icon  text-primary"></i>
-				</div>
-				<div>
-					<h3 class="home-heading">Cập nhập giá trị LCD </h3>
-					<input type="text" class="input text" ng-model="lcd[0]" ng-change="updateLCD()" />
-					<input type="text" class="input text" ng-model="lcd[1]" ng-change="updateLCD()" />
-				</div>
-			</div>
-			
-			
-			
-			
-			
+
 			
 			<!-- Cục thay đổi trạng thái LED -->
 			<div class="list-group-item list-group-item-home">
@@ -108,18 +74,6 @@
 			
 			
 			
-			<!-- Cục cập nhập giá trị nút nhấn! -->
-			<div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-tachometer feature-icon  text-primary"></i>
-				</div>
-				<div>
-					<h3 class="home-heading">trạng thái nút nhấn</h3>
-					<div ng-repeat="button_value in buttons  track by $index">
-						Nút nhấn {{$index}} đang {{button_value ? "THẢ" : "GIỮ"}}
-					</div>
-				</div>
-			</div>
 			
 			
 		</div>
