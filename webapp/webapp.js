@@ -14,17 +14,20 @@ angular.module('myApp', [
 		ioSocket: myIoSocket
 	});
 	return mySocket;
-	
 /////////////////////// Những dòng code ở trên phần này là phần cài đặt, các bạn hãy đọc thêm về angularjs để hiểu, cái này không nhảy cóc được nha!
 }).controller('Home', function($scope, mySocket) {
+	
+	
 	////Khu 1 -- Khu cài đặt tham số 
     //cài đặt một số tham số test chơi
 	//dùng để đặt các giá trị mặc định
-    $scope.CamBienMua = "không có tín hiệu từ cảm biến";
-    $scope.leds_status = [1, 1]
+    	$scope.CamBienMua = "không có tín hiệu từ cảm biến";
+    	$scope.leds_status = [1, 1]
 	$scope.lcd = ["", ""]
 	$scope.servoPosition = 0
 	$scope.buttons = [] //chả có gì cả, arduino gửi nhiêu thì nhận nhiêu!
+	
+	
 	
 	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
 	//các sự kiện ng-click, nhấn nút
@@ -41,6 +44,14 @@ angular.module('myApp', [
 			"led": $scope.leds_status
 		}
 		mySocket.emit("LED", json)
+	}
+	$scope.changephunsuong = function() {
+		console.log("send phunsuong ", $scope.phunsuongs_status)
+		
+		var json = {
+			"led": $scope.phunsuongs_status
+		}
+		mySocket.emit("phunsuong", json)
 	}
 	
 	//cập nhập lcd như một ông trùm 
