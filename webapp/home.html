@@ -6,7 +6,7 @@
 			
 			<!-- #########################cục giới thiệu -->
 			<div class="list-group-item list-group-item-home">
-				<h1>NÔNG NGHIỆP BỀN VỮNG</h1>
+				<h1>ỨNG DỤNG IoT TRONG NÔNG NGHIỆP</h1>
 			</div>
 			
 			
@@ -27,12 +27,12 @@
 			</div>
 			
 
-			<!-- ####################Cục thay đổi trạng thái LED -->
+			<!-- ####################Cục thay đổi trạng thái các bóng đèn -->
 			<div class="list-group-item list-group-item-home">
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
-					<div><h3 class="home-heading">trạng thái đèn led</h3>
+					<div><h3 class="home-heading">TRẠNG THÁI CÁC BÓNG ĐÈN</h3>
 					<div ng-repeat="led_value in leds_status  track by $index">
-						Đèn LED thứ {{$index}} đang {{led_value ? "Bật" : "Tắt"}}. <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changeLED()" ng-model="leds_status[$index]" />
+						Đèn thứ {{$index}} đang {{led_value ? "Bật" : "Tắt"}}. <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changeLED()" ng-model="leds_status[$index]" />
 						</div>
 					</div>
 				</div>
@@ -42,9 +42,9 @@
 			<!--####################### Cục thay đổi trạng thái máy phun sương -->
 			<div class="list-group-item list-group-item-home">
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
-				<div><h3 class="home-heading">trạng thái máy phun sương</h3>
+				<div><h3 class="home-heading">TRẠNG THÁI CÁC MÁY PHUN SƯƠNG</h3>
 					<div ng-repeat="phunsuong_value in phunsuongs_status  track by $index">
-						máy phun sương thứ {{$index}} đang {{phunsuong_value ? "Bật" : "Tắt"}}. <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changePHUNSUONG()" ng-model="phunsuongs_status[$index]" />
+						Máy phun sương thứ {{$index}} đang {{phunsuong_value ? "Bật" : "Tắt"}}. <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changePHUNSUONG()" ng-model="phunsuongs_status[$index]" />
 						</div>
 					</div>
 				</div>
