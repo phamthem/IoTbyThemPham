@@ -29,16 +29,12 @@ angular.module('myApp', [
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
 	$scope.changeLED = function() {
 		console.log("send LED ", $scope.leds_status)
-		var json = {
-			"led": $scope.leds_status
-			}
+		var json = {"led": $scope.leds_status}
 		mySocket.emit("LED", json)
 		}
 	$scope.changePHUNSUONG = function() {
 		console.log("send PHUNSUONG ", $scope.phunsuongs_status)
-		var json = {
-			"phunsuong": $scope.phunsuongs_status
-			}
+		var json = {"phunsuong": $scope.phunsuongs_status}
 		mySocket.emit("PHUNSUONG", json)
 		}
 	
