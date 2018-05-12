@@ -48,7 +48,7 @@ angular.module('myApp', [
 	//Khi nhận được lệnh NHIETDO_DOAM
 	mySocket.on('NHIETDO_DOAM', function(json) {
 		console.log("recv NHIETDO_DOAM", json)
-		$scope.nhiet_doam = json.giatri
+		$scope.gia_tri_thu_thap = json.nhietdo_doam
 		})
 	
 	
@@ -73,6 +73,7 @@ angular.module('myApp', [
 	mySocket.on('connect', function() {
 		console.log("connected")
 		mySocket.emit("RAIN") //Cập nhập trạng thái mưa
+		mySocket.emit("NHIETDODOAM") //cập nhật cảm biến nhiệt độ độ ẩm
 	})
 		
 });
