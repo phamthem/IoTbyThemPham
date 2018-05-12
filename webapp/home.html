@@ -14,9 +14,7 @@
 			<div class="list-group-item list-group-item-home">
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 					<div><h3 class="home-heading"><span style="color: orange">CẢM BIẾN NHIỆT ĐỘ VÀ ĐỘ ẨM</span></h3>
-					<div ng-repeat="nhiet_value in nhiet_doam  track by $index">
-						Đèn thứ {{$index}} đang {{nhiet_value ? "BẬT" : "TẮT"}}. <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changeLED()" ng-model="nhiet_doam[$index]" />
-						</div>
+					{{gia_tri_thu_thap}}
 					</div>
 				</div>
 			
