@@ -22,7 +22,8 @@ angular.module('myApp', [
     //cài đặt một số tham số test chơi
 	//dùng để đặt các giá trị mặc định
     	$scope.CamBienMua = "không có tín hiệu từ cảm biến";
-    	$scope.leds_status = [1, 1]
+    	$scope.leds_status = [0, 0]
+	$scope.leds_status = [0, 0]
 	$scope.lcd = ["", ""]
 	$scope.servoPosition = 0
 	$scope.buttons = [] //chả có gì cả, arduino gửi nhiêu thì nhận nhiêu!
@@ -49,7 +50,7 @@ angular.module('myApp', [
 		console.log("send phunsuong ", $scope.phunsuongs_status)
 		
 		var json = {
-			"led": $scope.phunsuongs_status
+			"phunsuong": $scope.phunsuongs_status
 		}
 		mySocket.emit("phunsuong", json)
 	}
@@ -81,6 +82,8 @@ angular.module('myApp', [
 	//các sự kiện từ Arduino gửi lên (thông qua esp8266, thông qua server)
 	mySocket.on('RAIN', function(json) {
 		$scope.CamBienMua = (json.digital == 1) ? "Không mưa" : "Có mưa rồi yeah ahihi"
+		
+		
 	})
 	//Khi nhận được lệnh LED_STATUS
 	mySocket.on('LED_STATUS', function(json) {
@@ -88,6 +91,14 @@ angular.module('myApp', [
 		console.log("recv LED", json)
 		$scope.leds_status = json.data
 	})
+	//Khi nhận được lệnh PHUNSUONG_STATUS
+	mySocket.on('PHUNSUONG_STATUS', function(json) {
+		//Nhận được thì in ra thôi hihi.
+		console.log("recv PHUNSUONG", json)
+		$scope.phunsuongs_status = json.data
+	})
+	
+	
 	//khi nhận được lệnh Button
 	mySocket.on('BUTTON', function(json) {
 		//Nhận được thì in ra thôi hihi.
