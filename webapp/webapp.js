@@ -52,7 +52,7 @@ angular.module('myApp', [
 		})
 	
 	
-	
+	//Khi nhận được lệnh LED_STATUS
 	mySocket.on('RAIN', function(json) {
 		$scope.CamBienMua = (json.digital == 1) ? "Không mưa" : "Có mưa"
 		})
