@@ -4,74 +4,50 @@
 			
 			
 			
-			<!-- cục giới thiệu -->
+			<!-- #########################cục giới thiệu -->
 			<div class="list-group-item list-group-item-home">
-				<h1>NÔNG NGHIỆP BỀN VỮNG
-				</h1>
+				<h1>NÔNG NGHIỆP BỀN VỮNG</h1>
 			</div>
 			
 			
 			
-			
-			
-			<!-- Cục cảm biến mưa -->
+			<!-- ########################ục cảm biến mưa -->
 			<div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-gamepad feature-icon text-primary"></i>
-				</div>
-				<div>
-					<h3 class="home-heading">Cảm biến mưa</h3>
-					Kết quả: {{CamBienMua}}
-				</div>
+				<div><i class="fa fa-gamepad feature-icon text-primary"></i></div>
+				<div><h3 class="home-heading">Cảm biến mưa</h3>trạng thái: {{CamBienMua}}</div>
 			</div>
 			
 			
 			
-			
-			
-			
-			
-			<!-- Cục cập nhập giá trị cảm biến -->
+			<!-- #####################Cục cập nhập giá trị cảm biến -->
 			<div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-tachometer feature-icon  text-primary"></i>
-				</div>
-				<div>
-					<h3 class="home-heading">cập nhật các cảm biến</h3>
-					<button class="button" ng-click="updateSensor()">CẬP NHẬT</button>
-				</div>
+				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
+				<div><h3 class="home-heading">cập nhật trạng thái</h3>
+				<button class="button" ng-click="updateSensor()">CẬP NHẬT</button></div>
 			</div>
 			
 
-			
-			<!-- Cục thay đổi trạng thái LED -->
+			<!-- ####################Cục thay đổi trạng thái LED -->
 			<div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-tachometer feature-icon  text-primary"></i>
-				</div>
-				<div>
-					<h3 class="home-heading">trạng thái đèn led</h3>
+				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
+					<div><h3 class="home-heading">trạng thái đèn led</h3>
 					<div ng-repeat="led_value in leds_status  track by $index">
 						Đèn LED thứ {{$index}} đang {{led_value ? "Bật" : "Tắt"}}. <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changeLED()" ng-model="leds_status[$index]" />
+						</div>
 					</div>
 				</div>
-			</div>
 			
 			
 			
-			<!-- Cục thay đổi trạng thái máy phun sương -->
+			<!--####################### Cục thay đổi trạng thái máy phun sương -->
 			<div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-tachometer feature-icon  text-primary"></i>
-				</div>
-				<div>
-					<h3 class="home-heading">trạng thái máy phun sương</h3>
+				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
+				<div><h3 class="home-heading">trạng thái máy phun sương</h3>
 					<div ng-repeat="phunsuong_value in phunsuongs_status  track by $index">
 						máy phun sương thứ {{$index}} đang {{phunsuong_value ? "Bật" : "Tắt"}}. <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changePHUNSUONG()" ng-model="phunsuongs_status[$index]" />
+						</div>
 					</div>
 				</div>
-			</div>
-			
 			
 			
 			
