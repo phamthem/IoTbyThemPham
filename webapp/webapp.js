@@ -53,11 +53,12 @@ angular.module('myApp', [
 		$scope.nhietdo = json.nhiet_do
 		$scope.doam = json.do_am
 		})
-	//Khi nhận được lệnh TRANGTHAIDEN
+	//Khi nhận được lệnh TTDEN
 	mySocket.on('TTDEN', function(json) {
 		console.log("recv TRANGTHAIDEN", json)
 		$scope.trangthaiden = (json.trangthaiden == 1) ? "đèn đã bật" : "đèn đã tắt"
 		})
+	//Khi nhận được lệnh TTPS
 	mySocket.on('TTPSS', function(json) {
 		console.log("recv TRANGTHAIPHUNSUONG", json)
 		$scope.trangthaiphunsuong = (json.trangthaiphunsuong == 1) ? "phun sương đã bật" : "phun sương đã tắt"
