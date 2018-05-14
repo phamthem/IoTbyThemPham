@@ -23,6 +23,7 @@ angular.module('myApp', [
     	$scope.nhietdo = " chưa kết nối";
 	$scope.doam = "chưa kết nối";
 	$scope.trangthaiden = "chưa kết nối";
+	$scope.trangthaiphunsuong = "chưa kết nối";
 	
 	
 //khu 2 -- gởi json về cho index.js đển chuyển về cho arduino
@@ -35,10 +36,13 @@ angular.module('myApp', [
 		console.log("ham Tat den duoc thuc thi")
 		mySocket.emit("TATDEN")		//gởi chuỗi TATDEN về arduino
 		}
-	$scope.changePHUNSUONG = function() {
-		console.log("send PHUNSUONG ", $scope.phunsuongs_status)
-		var json = {"phunsuong": $scope.phunsuongs_status}	//tạo mảng json có tên là phunsuong có giá trị
-		mySocket.emit("PHUNSUONG", json)			//gởi tên lệnh là PHUNSUONG sau đó gởi json về cho index.js
+	$scope.batphunsuong = function() {
+		console.log("ham bat phun suong duoc thuc thi")
+		mySocket.emit("BATPHUNSUONG")		//gởi chuỗi BATDEN về arduino
+		}
+	$scope.tatphunsuong = function() {
+		console.log("ham Tat phun suong duoc thuc thi")
+		mySocket.emit("TATPHUNSUONG")		//gởi chuỗi TATDEN về arduino
 		}
 //Khu 3 -- Nhận dữ liệu từ Arduno gửi lên (thông qua ESP8266 rồi socket server truyền tải!)
 	//các sự kiện từ Arduino gửi lên (thông qua esp8266, thông qua server)
@@ -53,6 +57,10 @@ angular.module('myApp', [
 	mySocket.on('TTDEN', function(json) {
 		console.log("recv TRANGTHAIDEN", json)
 		$scope.trangthaiden = (json.trangthaiden == 1) ? "đèn đã bật" : "đèn đã tắt"
+		})
+	mySocket.on('TTPSS', function(json) {
+		console.log("recv TRANGTHAIPHUNSUONG", json)
+		$scope.trangthaiphunsuong = (json.trangthaiphunsuong == 1) ? "phun sương đã bật" : "phun sương đã tắt"
 		})
 // Khu 4 -- Những dòng code sẽ được thực thi khi kết nối với Arduino (thông qua socket server)
 	mySocket.on('connect', function() {
