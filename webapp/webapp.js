@@ -25,7 +25,7 @@ angular.module('myApp', [
 	$scope.phunsuongs_status = [1, 1]
 	
 	
-	
+	//khu 2 -- gởi json về cho index.js đển chuyển về cho arduino
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
 	$scope.changeLED = function() {
 		console.log("send LED ", $scope.leds_status)
@@ -41,8 +41,8 @@ angular.module('myApp', [
 	////Khu 3 -- Nhận dữ liệu từ Arduno gửi lên (thông qua ESP8266 rồi socket server truyền tải!)
 	//các sự kiện từ Arduino gửi lên (thông qua esp8266, thông qua server)
 	
-	//Khi nhận được lệnh NHIETDO_DOAM
-	mySocket.on('NHIETDO_DOAM', function(json) {
+	//Khi nhận được lệnh CBIEN
+	mySocket.on('CBIEN', function(json) {
 		console.log("recv NHIETDO_DOAM", json)
 		$scope.gia_tri_thu_thap = json.nhietdo_doam
 		})
