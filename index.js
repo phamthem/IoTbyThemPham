@@ -29,21 +29,21 @@ app.use(express.static("node_modules/angular-socket-io"))	// Có thể truy cậ
 app.use(express.static("webapp")) 													// Dùng để lưu trữ webapp
 
 
-//giải nén chuỗi JSON thành các OBJECT
+//############################################   giải nén chuỗi JSON thành các OBJECT
 function ParseJson(jsondata) {
     	try {return JSON.parse(jsondata);} 
 	catch (error) {return null;}
 	}
 
 
-//Bắt các sự kiện khi esp8266 kết nối
+//############################################    Bắt các sự kiện khi esp8266 kết nối
 esp8266_nsp.on('connection', function(socket) {
 	console.log('esp8266 connected')
 	socket.on('disconnect', function() {
 		console.log("Disconnect socket esp8266")
 		})
 	
-	//nhận được bất cứ lệnh nào
+
 	socket.on("*", function(packet) {
 		console.log("esp8266 goi len webapp: ", packet.data) //in ra để debug
 		var eventName = packet.data[0]
@@ -52,7 +52,7 @@ esp8266_nsp.on('connection', function(socket) {
 		})
 })
 
-//Bắt các sự kiện khi webapp kết nối
+//##########################################    Bắt các sự kiện khi webapp kết nối
 webapp_nsp.on('connection', function(socket) {
 	console.log('webapp connected')
 	//Khi webapp socket bị mất kết nối
