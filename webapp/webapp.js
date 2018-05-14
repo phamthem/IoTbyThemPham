@@ -20,12 +20,13 @@ angular.module('myApp', [
 	////Khu 1 -- Khu cài đặt tham số 
     	//cài đặt một số tham số test chơi
 	//dùng để đặt các giá trị mặc định
-    	$scope.CamBienMua = "không có tín hiệu từ cảm biến";
+    	$scope.nhietdo = " chưa kết nối";
+	$scope.doam = "chưa kết nối";
     	$scope.leds_status = [1, 1]
 	$scope.phunsuongs_status = [1, 1]
 	
 	
-	//khu 2 -- gởi json về cho index.js đển chuyển về cho arduino
+//khu 2 -- gởi json về cho index.js đển chuyển về cho arduino
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
 	$scope.changeLED = function() {
 		console.log("send LED ", $scope.leds_status)
@@ -37,8 +38,7 @@ angular.module('myApp', [
 		var json = {"phunsuong": $scope.phunsuongs_status}	//tạo mảng json có tên là phunsuong có giá trị
 		mySocket.emit("PHUNSUONG", json)			//gởi tên lệnh là PHUNSUONG sau đó gởi json về cho index.js
 		}
-	
-	////Khu 3 -- Nhận dữ liệu từ Arduno gửi lên (thông qua ESP8266 rồi socket server truyền tải!)
+//Khu 3 -- Nhận dữ liệu từ Arduno gửi lên (thông qua ESP8266 rồi socket server truyền tải!)
 	//các sự kiện từ Arduino gửi lên (thông qua esp8266, thông qua server)
 	
 	//Khi nhận được lệnh CBIEN
@@ -47,15 +47,11 @@ angular.module('myApp', [
 		$scope.nhietdo = json.nhiet_do
 		$scope.doam = json.do_am
 		})
-	//Khi nhận được lệnh RAIN
-	mySocket.on('RAIN', function(json) {
-		$scope.CamBienMua = (json.digital == 1) ? "Không mưa" : "Có mưa"
-		})
-	//// Khu 4 -- Những dòng code sẽ được thực thi khi kết nối với Arduino (thông qua socket server)
+	
+// Khu 4 -- Những dòng code sẽ được thực thi khi kết nối với Arduino (thông qua socket server)
 	mySocket.on('connect', function() {
 		console.log("connected")
-		mySocket.emit("RAIN") 		//Cập nhập trạng thái mưa
-		mySocket.emit("CBIEN") 	//cập nhật cảm biến nhiệt độ độ ẩm
+		mySocket.emit("CBIEN") 	//gởi ký tự CBIEN để yêu cầu cập nhật cảm biến nhiệt độ độ ẩm
 		})
 		
 });
