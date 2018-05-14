@@ -22,16 +22,17 @@ angular.module('myApp', [
 	//dùng để đặt các giá trị mặc định
     	$scope.nhietdo = " chưa kết nối";
 	$scope.doam = "chưa kết nối";
-    	$scope.leds_status = [1]
-	$scope.phunsuongs_status = [1]
 	
 	
 //khu 2 -- gởi json về cho index.js đển chuyển về cho arduino
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
-	$scope.changeLED = function() {
-		console.log("send LED ", $scope.leds_status)
-		var json = {"led": $scope.leds_status}	//tạo mảng json có tên là led có giá trị $scope.leds_status
-		mySocket.emit("LED", json)		//gởi tên lệnh là LED sau đó gởi json về cho index.js
+	$scope.batden = function() {
+		console.log("ham bat den duoc thuc thi")
+		mySocket.emit("BATDEN")		//gởi chuỗi BATDEN về arduino
+		}
+	$scope.tatden = function() {
+		console.log("ham Tat den duoc thuc thi")
+		mySocket.emit("TATDEN")		//gởi chuỗi TATDEN về arduino
 		}
 	$scope.changePHUNSUONG = function() {
 		console.log("send PHUNSUONG ", $scope.phunsuongs_status)
@@ -52,6 +53,8 @@ angular.module('myApp', [
 	mySocket.on('connect', function() {
 		console.log("connected")
 		mySocket.emit("CBIEN") 	//gởi ký tự CBIEN để yêu cầu cập nhật cảm biến nhiệt độ độ ẩm
+		mySocket.emit("LED") 	//gởi ký tự CBIEN để yêu cầu cập nhật cảm biến nhiệt độ độ ẩm
+		mySocket.emit("PHUNSUONG") 	//gởi ký tự CBIEN để yêu cầu cập nhật cảm biến nhiệt độ độ ẩm
 		})
 		
 });
