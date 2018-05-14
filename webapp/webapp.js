@@ -22,8 +22,8 @@ angular.module('myApp', [
 	//dùng để đặt các giá trị mặc định
     	$scope.nhietdo = " chưa kết nối";
 	$scope.doam = "chưa kết nối";
-    	$scope.leds_status = [1, 1]
-	$scope.phunsuongs_status = [1, 1]
+    	$scope.leds_status = [0, 0]
+	$scope.phunsuongs_status = [0, 0]
 	
 	
 //khu 2 -- gởi json về cho index.js đển chuyển về cho arduino
