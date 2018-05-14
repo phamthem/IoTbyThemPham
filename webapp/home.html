@@ -13,10 +13,10 @@
 			<div class="list-group-item list-group-item-home">
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 					<div><h3 class="home-heading"><span style="color: orange">CẢM BIẾN NHIỆT ĐỘ VÀ ĐỘ ẨM</span></h3>
-					<h4 class="home-heading">Nhiệt độ lúc này là</h4>	
-					<span style="color: brown"><b>{{nhietdo}}</b>  (độ C)</span>
-					<h4 class="home-heading">Độ ẩm lúc này là</h4>
-					<span style="color: brown"><b>{{doam}}</b>    (%)</span>
+					<h4 class="home-heading">Nhiệt độ lúc này là:</h4>	
+					<span style="color: brown"><b>{{nhietdo}}</b>__(độ C)</span>
+					<h4 class="home-heading">Độ ẩm lúc này là:</h4>
+					<span style="color: brown"><b>{{doam}}</b>__(%)</span>
 					</div>
 				</div>
 			
@@ -34,7 +34,7 @@
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 					<div><h3 class="home-heading"><span style="color: violet">TRẠNG THÁI CÁC BÓNG ĐÈN</span></h3>
 					<div ng-repeat="led_value in leds_status  track by $index">
-						Đèn thứ {{$index}} đang {{led_value ? "BẬT" : "TẮT"}}. <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changeLED()" ng-model="leds_status[$index]" />
+						Đèn<!--{{$index}}--> đang _ {{led_value ? "BẬT" : "TẮT"}} _ <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changeLED()" ng-model="leds_status[$index]" />
 						</div>
 					</div>
 				</div>
@@ -46,7 +46,7 @@
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 				<div><h3 class="home-heading"><span style="color: violet">TRẠNG THÁI CÁC MÁY PHUN SƯƠNG</span></h3>
 					<div ng-repeat="phunsuong_value in phunsuongs_status  track by $index">
-						Máy phun sương thứ {{$index}} đang {{phunsuong_value ? "BẬT" : "TẮT"}}. <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changePHUNSUONG()" ng-model="phunsuongs_status[$index]" />
+						Máy phun sương<!--{{$index}}--> đang _ {{phunsuong_value ? "BẬT" : "TẮT"}} _ <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changePHUNSUONG()" ng-model="phunsuongs_status[$index]" />
 						</div>
 					</div>
 				</div>
