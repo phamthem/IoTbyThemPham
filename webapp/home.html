@@ -45,9 +45,9 @@
 			<div class="list-group-item list-group-item-home">
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 				<div><h3 class="home-heading"><span style="color: violet">TRẠNG THÁI CÁC MÁY PHUN SƯƠNG</span></h3>
-					<div ng-repeat="phunsuong_value in phunsuongs_status  track by $index">
-						Máy phun sương<!--{{$index}}--> đang _ {{phunsuong_value ? "BẬT" : "TẮT"}} _ <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changePHUNSUONG()" ng-model="phunsuongs_status[$index]" />
-						</div>
+					<button class="button" ng-click="batphunsuong()">Bật máy phun sương</button><button class="button" ng-click="tatphunsuong()">Tắt máy phun sương</button>
+					</div>
+				{{trangthaiphunsuong}}
 					</div>
 				</div>
 			
