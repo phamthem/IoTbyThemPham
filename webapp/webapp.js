@@ -44,7 +44,7 @@ angular.module('myApp', [
 	//Khi nhận được lệnh CBIEN
 	mySocket.on('CBIEN', function(json) {
 		console.log("recv NHIETDO_DOAM", json)
-		$scope.gia_tri_thu_thap = json.nhietdo_doam
+		$scope.giatrithuthap = json.nhietdo_doam
 		})
 	//Khi nhận được lệnh RAIN
 	mySocket.on('RAIN', function(json) {
