@@ -38,11 +38,11 @@ angular.module('myApp', [
 		}
 	$scope.batphunsuong = function() {
 		console.log("ham bat phun suong duoc thuc thi")
-		mySocket.emit("BATPHUNSUONG")		//gởi chuỗi BATDEN về arduino
+		mySocket.emit("BATPS")		//gởi chuỗi BATDEN về arduino
 		}
 	$scope.tatphunsuong = function() {
 		console.log("ham Tat phun suong duoc thuc thi")
-		mySocket.emit("TATPHUNSUONG")		//gởi chuỗi TATDEN về arduino
+		mySocket.emit("TATPS")		//gởi chuỗi TATDEN về arduino
 		}
 //Khu 3 -- Nhận dữ liệu từ Arduno gửi lên (thông qua ESP8266 rồi socket server truyền tải!)
 	//các sự kiện từ Arduino gửi lên (thông qua esp8266, thông qua server)
@@ -53,16 +53,13 @@ angular.module('myApp', [
 		$scope.nhietdo = json.nhiet_do
 		$scope.doam = json.do_am
 		})
-	//Khi nhận được lệnh TTDEN
-	mySocket.on('TTDEN', function(json) {
+	//Khi nhận được lệnh P_HOI
+	mySocket.on('P_HOI', function(json) {
 		console.log("recv TRANGTHAIDEN", json)
 		$scope.trangthaiden = (json.trangthaiden == 1) ? "đèn đã bật" : "đèn đã tắt"
-		})
-	//Khi nhận được lệnh TTPS
-	mySocket.on('TTPS', function(json) {
-		console.log("recv TRANGTHAIPHUNSUONG", json)
 		$scope.trangthaiphunsuong = (json.trangthaiphunsuong == 1) ? "phun sương đã bật" : "phun sương đã tắt"
 		})
+	
 // Khu 4 -- Những dòng code sẽ được thực thi khi kết nối với Arduino (thông qua socket server)
 	mySocket.on('connect', function() {
 		console.log("connected")
