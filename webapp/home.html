@@ -5,11 +5,10 @@
 			
 			
 			<!-- #########################cục giới thiệu -->
-			<body text="blue" bgcolor="green">
-				<div class="list-group-item list-group-item-home">
-					<h1><span style="color: red"><b>SUSTAINABLE AGRICULTURE</b></span></h1>
-				</div>
-			</body>
+			<div class="list-group-item list-group-item-home">
+				<h1><span style="color: red"><b>SUSTAINABLE AGRICULTURE</b></span></h1>
+			</div>
+
 			<!-- ####################Cục nhiệt độ độ ẩm -->
 			<div class="list-group-item list-group-item-home">
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
@@ -37,7 +36,7 @@
 					<div><h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN BÓNG ĐÈN</span></h3>
 					<button class="button" ng-click="batden()">Bật đèn</button><button class="button" ng-click="tatden()">Tắt đèn</button>
 					</div>
-				{{trangthaiden}}
+				<span style="color: orange">{{trangthaiden}}</span>
 				</div>
 			
 			
@@ -48,9 +47,9 @@
 				<div><h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN PHUN SƯƠNG</span></h3>
 					<button class="button" ng-click="batphunsuong()">Bật máy phun sương</button><button class="button" ng-click="tatphunsuong()">Tắt máy phun sương</button>
 					</div>
-				{{trangthaiphunsuong}}
-					</div>
+				<span style="color: orange">{{trangthaiphunsuong}}</span>
 				</div>
+			
 			
 			
 			
