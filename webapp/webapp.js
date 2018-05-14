@@ -20,9 +20,9 @@ angular.module('myApp', [
 	////Khu 1 -- Khu cài đặt tham số 
     	//cài đặt một số tham số test chơi
 	//dùng để đặt các giá trị mặc định
-    	$scope.nhietdo = " chưa kết nối";
-	$scope.doam = "chưa kết nối";
-	$scope.trangthaiden = "chưa kết nối";
+    	$scope.nhietdo = "Chưa kết nối";
+	$scope.doam = "Chưa kết nối";
+	$scope.trangthaiden = "Chưa kết nối";
 	$scope.trangthaiphunsuong = "chưa kết nối";
 	
 	
@@ -57,7 +57,7 @@ angular.module('myApp', [
 	mySocket.on('P_HOI', function(json) {
 		console.log("recv TRANGTHAIDEN", json)
 		$scope.trangthaiden = (json.trangthaiden == 1) ? "đèn đã bật" : "đèn đã tắt"
-		$scope.trangthaiphunsuong = (json.trangthaiphunsuong == 1) ? "phun sương đã bật" : "phun sương đã tắt"
+		$scope.trangthaiphunsuong = (json.trangthaiphunsuong == 1) ? "Máy phun sương đã bật" : "Máy phun sương đã tắt"
 		})
 	
 // Khu 4 -- Những dòng code sẽ được thực thi khi kết nối với Arduino (thông qua socket server)
