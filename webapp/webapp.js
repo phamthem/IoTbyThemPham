@@ -29,13 +29,13 @@ angular.module('myApp', [
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
 	$scope.changeLED = function() {
 		console.log("send LED ", $scope.leds_status)
-		var json = {"led": $scope.leds_status}
-		mySocket.emit("LED", json)
+		var json = {"led": $scope.leds_status}	//tạo mảng json có tên là led có giá trị $scope.leds_status
+		mySocket.emit("LED", json)		//gởi tên lệnh là LED sau đó gởi json về cho index.js
 		}
 	$scope.changePHUNSUONG = function() {
 		console.log("send PHUNSUONG ", $scope.phunsuongs_status)
-		var json = {"phunsuong": $scope.phunsuongs_status}
-		mySocket.emit("PHUNSUONG", json)
+		var json = {"phunsuong": $scope.phunsuongs_status}	//tạo mảng json có tên là phunsuong có giá trị
+		mySocket.emit("PHUNSUONG", json)			//gởi tên lệnh là PHUNSUONG sau đó gởi json về cho index.js
 		}
 	
 	////Khu 3 -- Nhận dữ liệu từ Arduno gửi lên (thông qua ESP8266 rồi socket server truyền tải!)
@@ -46,30 +46,15 @@ angular.module('myApp', [
 		console.log("recv NHIETDO_DOAM", json)
 		$scope.gia_tri_thu_thap = json.nhietdo_doam
 		})
-	
-	
-	//Khi nhận được lệnh LED_STATUS
+	//Khi nhận được lệnh RAIN
 	mySocket.on('RAIN', function(json) {
 		$scope.CamBienMua = (json.digital == 1) ? "Không mưa" : "Có mưa"
-		})
-	
-	//Khi nhận được lệnh LED_STATUS
-	mySocket.on('LED_STATUS', function(json) {
-		//Nhận được thì in ra thôi hihi.
-		console.log("recv LED", json)
-		$scope.leds_status = json.data
-		})
-	//Khi nhận được lệnh PHUNSUONG_STATUS
-	mySocket.on('PHUNSUONG_STATUS', function(json) {
-		//Nhận được thì in ra thôi hihi.
-		console.log("recv PHUNSUONG", json)
-		$scope.phunsuongs_status = json.data
 		})
 	//// Khu 4 -- Những dòng code sẽ được thực thi khi kết nối với Arduino (thông qua socket server)
 	mySocket.on('connect', function() {
 		console.log("connected")
-		mySocket.emit("RAIN") //Cập nhập trạng thái mưa
-		mySocket.emit("NHIETDODOAM") //cập nhật cảm biến nhiệt độ độ ẩm
-	})
+		mySocket.emit("RAIN") 		//Cập nhập trạng thái mưa
+		mySocket.emit("NHIETDODOAM") 	//cập nhật cảm biến nhiệt độ độ ẩm
+		})
 		
 });
