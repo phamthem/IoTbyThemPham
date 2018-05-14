@@ -22,7 +22,7 @@ angular.module('myApp', [
 	//dùng để đặt các giá trị mặc định
     	$scope.nhietdo = " chưa kết nối";
 	$scope.doam = "chưa kết nối";
-	$scope.trangthai = "chưa kết nối";
+	$scope.trangthaiden = "chưa kết nối";
 	
 	
 //khu 2 -- gởi json về cho index.js đển chuyển về cho arduino
@@ -52,7 +52,7 @@ angular.module('myApp', [
 	//Khi nhận được lệnh TRANGTHAIDEN
 	mySocket.on('TTDEN', function(json) {
 		console.log("recv TRANGTHAIDEN", json)
-		$scope.trangthai = (json.trangthaiden == 1) ? "đèn đã bật" : "đèn đã tắt"
+		$scope.trangthaiden = (json.trangthaiden == 1) ? "đèn đã bật" : "đèn đã tắt"
 		})
 // Khu 4 -- Những dòng code sẽ được thực thi khi kết nối với Arduino (thông qua socket server)
 	mySocket.on('connect', function() {
