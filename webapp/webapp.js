@@ -50,7 +50,7 @@ angular.module('myApp', [
 		$scope.doam = json.do_am
 		})
 	//Khi nhận được lệnh TRANGTHAIDEN
-	mySocket.on('TRANGTHAIDEN', function(json) {
+	mySocket.on('TTDEN', function(json) {
 		console.log("recv TRANGTHAIDEN", json)
 		$scope.trangthai = (json.trangthaiden == 1) ? "đèn đã bật" : "đèn đã tắt"
 		})
