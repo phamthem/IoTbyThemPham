@@ -59,7 +59,7 @@ angular.module('myApp', [
 		$scope.trangthaiden = (json.trangthaiden == 1) ? "đèn đã bật" : "đèn đã tắt"
 		})
 	//Khi nhận được lệnh TTPS
-	mySocket.on('TTPSS', function(json) {
+	mySocket.on('TTPS', function(json) {
 		console.log("recv TRANGTHAIPHUNSUONG", json)
 		$scope.trangthaiphunsuong = (json.trangthaiphunsuong == 1) ? "phun sương đã bật" : "phun sương đã tắt"
 		})
