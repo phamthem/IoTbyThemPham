@@ -33,9 +33,7 @@
 			<div class="list-group-item list-group-item-home">
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 					<div><h3 class="home-heading"><span style="color: violet">TRẠNG THÁI CÁC BÓNG ĐÈN</span></h3>
-					<div ng-repeat="led_value in leds_status  track by $index">
-						Đèn<!--{{$index}}--> đang _ {{led_value ? "BẬT" : "TẮT"}} _ <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changeLED()" ng-model="leds_status[$index]" />
-						</div>
+					<button class="button" ng-click="batden()">BẬT ĐÈN</button></div><button class="button" ng-click="tatden()">TẮT ĐÈN</button></div>
 					</div>
 				</div>
 			
