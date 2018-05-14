@@ -22,6 +22,7 @@ angular.module('myApp', [
 	//dùng để đặt các giá trị mặc định
     	$scope.nhietdo = " chưa kết nối";
 	$scope.doam = "chưa kết nối";
+	$scope.trangthai = "chưa kết nối";
 	
 	
 //khu 2 -- gởi json về cho index.js đển chuyển về cho arduino
