@@ -1,9 +1,9 @@
 <div class="scrollable">
 	<div class="scrollable-content">
 		<div class="list-group text-center">
-			
-			
-			
+			<a href="/login.html">Login</a>
+
+
 			<!-- #########################cục giới thiệu -->
 			<div class="list-group-item list-group-item-home">
 				<h1><span style="color: red"><b>SUSTAINABLE AGRICULTURE</b></span></h1>
@@ -12,48 +12,52 @@
 			<!-- ####################Cục nhiệt độ độ ẩm -->
 			<div class="list-group-item list-group-item-home">
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
-					<div><h3 class="home-heading"><span style="color: orange">CẢM BIẾN NHIỆT ĐỘ VÀ ĐỘ ẨM</span></h3>
-					<h4 class="home-heading">Nhiệt độ lúc này là:</h4>	
+				<div>
+					<h3 class="home-heading"><span style="color: orange">CẢM BIẾN NHIỆT ĐỘ VÀ ĐỘ ẨM</span></h3>
+					<h4 class="home-heading">Nhiệt độ lúc này là:</h4>
 					<span style="color: brown"><b>{{nhietdo}}</b>__(độ C)</span>
 					<h4 class="home-heading">Độ ẩm lúc này là:</h4>
 					<span style="color: brown"><b>{{doam}}</b>__(%)</span>
-					</div>
 				</div>
-			
-			
+			</div>
+
+
 			<!-- #####################Cục cập nhập giá trị cảm biến -->
 			<div class="list-group-item list-group-item-home">
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
-					<div><h3 class="home-heading"><span style="color: blue">CẬP NHẬT TRẠNG THÁI</span></h3>
-						<button class="button" ng-click="updateSensor()">cập nhật</button>
-						</div>
-					</div>
-			
+				<div>
+					<h3 class="home-heading"><span style="color: blue">CẬP NHẬT TRẠNG THÁI</span></h3>
+					<button class="button" ng-click="updateSensor()">cập nhật</button>
+				</div>
+			</div>
+
 
 			<!-- ####################Cục thay đổi trạng thái các bóng đèn -->
 			<div class="list-group-item list-group-item-home">
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
-					<div><h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN BÓNG ĐÈN</span></h3>
-						<button class="button" ng-click="batden()">Bật đèn</button><button class="button" ng-click="tatden()">Tắt đèn</button>
-						</div>
-					<span style="color: green">{{trangthaiden}}</span>
-					</div>
-			
-			
-			
+				<div>
+					<h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN BÓNG ĐÈN</span></h3>
+					<button class="button" ng-click="batden()">Bật đèn</button><button class="button" ng-click="tatden()">Tắt đèn</button>
+				</div>
+				<span style="color: green">{{trangthaiden}}</span>
+			</div>
+
+
+
 			<!--####################### Cục thay đổi trạng thái máy phun sương -->
 			<div class="list-group-item list-group-item-home">
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
-					<div><h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN PHUN SƯƠNG</span></h3>
-						<button class="button" ng-click="batphunsuong()">Bật máy phun sương</button><button class="button" ng-click="tatphunsuong()">Tắt máy phun sương</button>
-						</div>
-					<span style="color: green">{{trangthaiphunsuong}}</span>
-					</div>
-			
-			
-			
-			
-			
+				<div>
+					<h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN PHUN SƯƠNG</span></h3>
+					<button class="button" ng-click="batphunsuong()">Bật máy phun sương</button><button class="button" ng-click="tatphunsuong()">Tắt máy phun sương</button>
+				</div>
+				<span style="color: green">{{trangthaiphunsuong}}</span>
+			</div>
+
+
+
+
+
 		</div>
 	</div>
 </div>
