@@ -87,11 +87,11 @@ angular.module('myApp', [
 	//Khi nhận được lệnh P_HOI
 	mySocket.on('P_HOI', function(json) {
 		console.log("recv TRANGTHAIDEN", json)
-		$scope.trangthairelay1 = (json.tt_relay1 == 1) ? "thiết bị này đã bật" : "thiết bị này đã tắt"
-		$scope.trangthairelay2 = (json.tt_relay2 == 1) ? "thiết bị này đã bật" : "thiết bị này đã tắt"
-		$scope.trangthairelay3 = (json.tt_relay3 == 1) ? "thiết bị này đã bật" : "thiết bị này đã tắt"
-		$scope.trangthairelay4 = (json.tt_relay4 == 1) ? "thiết bị này đã bật" : "thiết bị này đã tắt"
-		$scope.trangthai4relay = (json.tt_tatca == 1) ? "tất cả thiết bị này đã bật" : "vui lòng kiểm tra trạng thái từng thiết bị ở trên"
+		$scope.trangthairelay1 = (json.tt_relay1 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
+		$scope.trangthairelay2 = (json.tt_relay2 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
+		$scope.trangthairelay3 = (json.tt_relay3 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
+		$scope.trangthairelay4 = (json.tt_relay4 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
+		$scope.trangthai4relay = (json.tt_tatca == 1) ? "Hãy kiểm các thiết có được BẬT chưa !" : "Hãy kiểm các thiết có được TẮT chưa"
 		})
 	
 // Khu 4 -- Những dòng code sẽ được thực thi khi kết nối với Arduino (thông qua socket server)
