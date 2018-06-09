@@ -26,6 +26,7 @@ angular.module('myApp', [
 	$scope.trangthairelay2 = "Chưa kết nối";
 	$scope.trangthairelay3 = "Chưa kết nối";
 	$scope.trangthairelay4 = "Chưa kết nối";
+	$scope.trangthai4relay = "Chưa kết nối";
 	
 	
 //khu 2 -- gởi json về cho index.js đển chuyển về cho arduino
@@ -65,6 +66,15 @@ angular.module('myApp', [
 		console.log("ham ngatrelay4 duoc thuc thi")
 		mySocket.emit("NRL4")		//gởi chuỗi về arduino
 		}
+	///////////////////////////////////////////////////////////////
+	$scope.dong4relay = function() {
+		console.log("ham dong4relay duoc thuc thi")
+		mySocket.emit("D4RL")		//gởi chuỗi về arduino
+		}
+	$scope.ngatrelay4 = function() {
+		console.log("ham ngat4relay duoc thuc thi")
+		mySocket.emit("N4RL")		//gởi chuỗi về arduino
+		}
 //Khu 3 -- Nhận dữ liệu từ Arduno gửi lên (thông qua ESP8266 rồi socket server truyền tải!)
 	//các sự kiện từ Arduino gửi lên (thông qua esp8266, thông qua server)
 	
@@ -81,6 +91,7 @@ angular.module('myApp', [
 		$scope.trangthairelay2 = (json.tt_relay2 == 1) ? "thiết bị này đã bật" : "thiết bị này đã tắt"
 		$scope.trangthairelay3 = (json.tt_relay3 == 1) ? "thiết bị này đã bật" : "thiết bị này đã tắt"
 		$scope.trangthairelay4 = (json.tt_relay4 == 1) ? "thiết bị này đã bật" : "thiết bị này đã tắt"
+		$scope.trangthai4relay = (json.tt_tatca == 1) ? "tất cả thiết bị này đã bật" : "vui lòng kiểm tra trạng thái từng thiết bị ở trên"
 		})
 	
 // Khu 4 -- Những dòng code sẽ được thực thi khi kết nối với Arduino (thông qua socket server)
