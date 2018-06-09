@@ -71,7 +71,7 @@ angular.module('myApp', [
 		console.log("ham dong4relay duoc thuc thi")
 		mySocket.emit("DTC")		//gởi chuỗi về arduino
 		}
-	$scope.ngatrelay4 = function() {
+	$scope.ngat4relay = function() {
 		console.log("ham ngat4relay duoc thuc thi")
 		mySocket.emit("NTC")		//gởi chuỗi về arduino
 		}
