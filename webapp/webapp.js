@@ -1,4 +1,4 @@
-angular.module('myApp', [
+angular.module('IoT', [
     	'ngRoute',
    	'mobile-angular-ui',
 	'btford.socket-io'
