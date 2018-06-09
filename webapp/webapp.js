@@ -78,9 +78,9 @@ angular.module('myApp', [
 	mySocket.on('P_HOI', function(json) {
 		console.log("recv TRANGTHAIDEN", json)
 		$scope.trangthairelay1 = (json.tt_relay1 == 1) ? "thiết bị này đã bật" : "thiết bị này đã tắt"
-		$scope.trangthairelay1 = (json.tt_relay2 == 1) ? "thiết bị này đã bật" : "thiết bị này đã tắt"
-		$scope.trangthairelay1 = (json.tt_relay3 == 1) ? "thiết bị này đã bật" : "thiết bị này đã tắt"
-		$scope.trangthairelay1 = (json.tt_relay4 == 1) ? "thiết bị này đã bật" : "thiết bị này đã tắt"
+		$scope.trangthairelay2 = (json.tt_relay2 == 1) ? "thiết bị này đã bật" : "thiết bị này đã tắt"
+		$scope.trangthairelay3 = (json.tt_relay3 == 1) ? "thiết bị này đã bật" : "thiết bị này đã tắt"
+		$scope.trangthairelay4 = (json.tt_relay4 == 1) ? "thiết bị này đã bật" : "thiết bị này đã tắt"
 		})
 	
 // Khu 4 -- Những dòng code sẽ được thực thi khi kết nối với Arduino (thông qua socket server)
