@@ -69,11 +69,11 @@ angular.module('myApp', [
 	///////////////////////////////////////////////////////////////
 	$scope.dong4relay = function() {
 		console.log("ham dong4relay duoc thuc thi")
-		mySocket.emit("D4RL")		//gởi chuỗi về arduino
+		mySocket.emit("DTC")		//gởi chuỗi về arduino
 		}
 	$scope.ngatrelay4 = function() {
 		console.log("ham ngat4relay duoc thuc thi")
-		mySocket.emit("N4RL")		//gởi chuỗi về arduino
+		mySocket.emit("NTC")		//gởi chuỗi về arduino
 		}
 //Khu 3 -- Nhận dữ liệu từ Arduno gửi lên (thông qua ESP8266 rồi socket server truyền tải!)
 	//các sự kiện từ Arduino gửi lên (thông qua esp8266, thông qua server)
