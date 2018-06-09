@@ -32,27 +32,52 @@
 			</div>
 
 
-			<!-- ####################Cục thay đổi trạng thái các bóng đèn -->
+			<!-- ####################Cục thay đổi trạng thái relay 1 -->
 			<div class="list-group-item list-group-item-home">
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 				<div>
-					<h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN BÓNG ĐÈN</span></h3>
-					<button class="button" ng-click="batden()">Bật đèn</button><button class="button" ng-click="tatden()">Tắt đèn</button>
+					<h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN THIẾT BỊ 1</span></h3>
+					<button class="button" ng-click="dongrelay1()">Bật</button><button class="button" ng-click="ngatrelay1()">Tắt</button>
 				</div>
-				<span style="color: green">{{trangthaiden}}</span>
+				<span style="color: green">{{trangthairelay1}}</span>
 			</div>
 
 
 
-			<!--####################### Cục thay đổi trạng thái máy phun sương -->
+			<!--####################### Cục thay đổi trạng thái relay 2 -->
 			<div class="list-group-item list-group-item-home">
 				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 				<div>
-					<h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN PHUN SƯƠNG</span></h3>
-					<button class="button" ng-click="batphunsuong()">Bật máy phun sương</button><button class="button" ng-click="tatphunsuong()">Tắt máy phun sương</button>
+					<h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN RELAY 2</span></h3>
+					<button class="button" ng-click="dongrelay2()">Bật</button><button class="button" ng-click="ngatrelay2()">Tắt</button>
 				</div>
-				<span style="color: green">{{trangthaiphunsuong}}</span>
+				<span style="color: green">{{trangthairelay2}}</span>
 			</div>
+			
+			
+			
+			<!-- ####################Cục thay đổi trạng thái relay 3 -->
+			<div class="list-group-item list-group-item-home">
+				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
+				<div>
+					<h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN THIẾT BỊ 1</span></h3>
+					<button class="button" ng-click="dongrelay3()">Bật</button><button class="button" ng-click="ngatrelay3()">Tắt</button>
+				</div>
+				<span style="color: green">{{trangthairelay3}}</span>
+			</div>
+			
+			
+			
+				<!--####################### Cục thay đổi trạng thái relay 4 -->
+			<div class="list-group-item list-group-item-home">
+				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
+				<div>
+					<h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN RELAY 2</span></h3>
+					<button class="button" ng-click="dongrelay4()">Bật</button><button class="button" ng-click="ngatrelay4()">Tắt</button>
+				</div>
+				<span style="color: green">{{trangthairelay4}}</span>
+			</div>
+
 
 
 
