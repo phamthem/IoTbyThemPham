@@ -13,7 +13,7 @@ angular.module('myApp', [
 		ioSocket: myIoSocket
 		});
 	return mySocket;
-/////////////////////// Những dòng code ở trên phần này là phần cài đặt, các bạn hãy đọc thêm về angularjs để hiểu, cái này không nhảy cóc được nha!
+/////////////////////// Những dòng code ở trên phần này là phần cài đặt,  đọc thêm về angularjs 
 }).controller('Home', function($scope, mySocket) {
 	
 	
