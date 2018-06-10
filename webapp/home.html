@@ -4,56 +4,6 @@
 			<a href="/login.html">Login</a>
 			
 			
-		
-			
-	<div class="list-group-item list-group-item-home">		
-			
-			<table border="1px" cellspacing="0px" width="100%">
-    <tr>
-        <th rowspan="2">STT</th>
-        <th rowspan="2">MSSV</th>
-        <th rowspan="2"><div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
-				<div>
-					<h3 class="home-heading"><span style="color: purple">NHIỆT ĐỘ</span><span style="color: orange"> và</span><span style="color: purple"> ĐỘ ẨM</span> <span style="color: orange">tại vườn</span></h3>
-					<h4 class="home-heading">Nhiệt độ lúc này là:</h4>
-					<span style="color: brown"><b>{{nhietdo}}</b>__(độ C)</span>
-					<h4 class="home-heading">Độ ẩm lúc này là:</h4>
-					<span style="color: brown"><b>{{doam}}</b>__(%)</span>
-				</div></th>
-        <th colspan="3">Ngày tháng năm sinh</th>
-    </tr>
-    <tr>
-        <th>Ngày</th>
-        <th>Tháng</th>
-        <th>Năm</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>1111xxxx</td>
-        <td>Nguyễn Thành Nhân</td>
-        <td>31</td>
-        <td>12</td>
-        <td>1990</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>1111xxxx</td>
-        <td>Web cơ bản</td>
-        <td>30</td>
-        <td>11</td>
-        <td>1991</td>
-    </tr>
-</table>
-			
-	</div>		
-			
-			
-			
-			
-			
-			
-			
-			
  		
 			<!-- #########################cục giới thiệu -->
 			<div class="list-group-item list-group-item-home">
@@ -63,7 +13,6 @@
 
 			<!-- ####################Cục nhiệt độ độ ẩm -->
 			<div class="list-group-item list-group-item-home">
-				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 				<div>
 					<h3 class="home-heading"><span style="color: purple">NHIỆT ĐỘ</span><span style="color: orange"> và</span><span style="color: purple"> ĐỘ ẨM</span> <span style="color: orange">tại vườn</span></h3>
 					<h4 class="home-heading">Nhiệt độ lúc này là:</h4>
@@ -76,7 +25,6 @@
 
 			<!-- #####################Cục cập nhập giá trị cảm biến -->
 			<div class="list-group-item list-group-item-home">
-				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 				<div>
 					<h3 class="home-heading"><span style="color: blue">CẬP NHẬT HỆ THỐNG</span></h3>
 					<button class="button" ng-click="cncb()">Cập nhật các cảm biến</button><button class="button" ng-click="cntb()">Cập nhật trạng thái on/off</button>
@@ -86,7 +34,6 @@
 
 			<!-- ####################Cục thay đổi trạng thái relay 1 -->
 			<div class="list-group-item list-group-item-home">
-				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 				<div>
 					<h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN THIẾT BỊ 1</span></h3>
 					<button class="button" ng-click="dongrelay1()">Bật</button><button class="button" ng-click="ngatrelay1()">Tắt</button>
@@ -98,7 +45,6 @@
 
 			<!--####################### Cục thay đổi trạng thái relay 2 -->
 			<div class="list-group-item list-group-item-home">
-				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 				<div>
 					<h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN THIẾT BỊ 2</span></h3>
 					<button class="button" ng-click="dongrelay2()">Bật</button><button class="button" ng-click="ngatrelay2()">Tắt</button>
@@ -110,7 +56,6 @@
 			
 			<!-- ####################Cục thay đổi trạng thái relay 3 -->
 			<div class="list-group-item list-group-item-home">
-				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 				<div>
 					<h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN THIẾT BỊ 3</span></h3>
 					<button class="button" ng-click="dongrelay3()">Bật</button><button class="button" ng-click="ngatrelay3()">Tắt</button>
@@ -122,7 +67,6 @@
 			
 				<!--####################### Cục thay đổi trạng thái relay 4 -->
 			<div class="list-group-item list-group-item-home">
-				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 				<div>
 					<h3 class="home-heading"><span style="color: brown">ĐIỀU KHIỂN THIẾT BỊ 4</span></h3>
 					<button class="button" ng-click="dongrelay4()">Bật</button><button class="button" ng-click="ngatrelay4()">Tắt</button>
@@ -134,7 +78,6 @@
 			
 				<!--####################### Cục thay đổi trạng thái 4 relay-->
 			<div class="list-group-item list-group-item-home">
-				<div><i class="fa fa-tachometer feature-icon  text-primary"></i></div>
 				<div>
 					<h3 class="home-heading"><span style="color: navy">ĐIỀU KHIỂN ĐỒNG THỜI 4 THIẾT BỊ</span></h3>
 					<button class="button" ng-click="dong4relay()">Bật tất cả thiết bị</button><button class="button" ng-click="ngat4relay()">Tắt tất cả thiết bị</button>
@@ -157,6 +100,7 @@
 			<h4><span style="color:olive">Đề tài nghiên cứu phát triển các giải pháp điều khiển thông minh ứng dụng phát triển nông nghiệp công nghệ cao</span></h4>			
 			</html>
 		</div>
+	
 	
 	
 	</div>
