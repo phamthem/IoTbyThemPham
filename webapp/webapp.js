@@ -107,6 +107,7 @@ angular.module('IoT', [
 	mySocket.on('connect', function() {
 		console.log("connected")
 		mySocket.emit("CNCB") 	//gởi ký tự CNCB để yêu cầu cập nhật cảm biến nhiệt độ độ ẩm
+		mySocket.emit("CNTB") 	//gởi ký tự CNCB để yêu cầu cập nhật cảm biến nhiệt độ độ ẩm
 		})
 		
 });
