@@ -75,6 +75,15 @@ angular.module('IoT', [
 		console.log("ham ngat4relay duoc thuc thi")
 		mySocket.emit("NTC")		//gởi chuỗi về arduino
 		}
+	//////////////////////////////////////////////////////////////
+	$scope.cncb = function() {
+		console.log("ham cncb duoc thuc thi")
+		mySocket.emit("CNCB")		//gởi chuỗi về arduino
+		}
+	$scope.cntb = function() {
+		console.log("ham cntb duoc thuc thi")
+		mySocket.emit("CNTB")		//gởi chuỗi về arduino
+		}
 //Khu 3 -- Nhận dữ liệu từ Arduno gửi lên (thông qua ESP8266 rồi socket server truyền tải!)
 	//các sự kiện từ Arduino gửi lên (thông qua esp8266, thông qua server)
 	
@@ -97,7 +106,7 @@ angular.module('IoT', [
 // Khu 4 -- Những dòng code sẽ được thực thi khi kết nối với Arduino (thông qua socket server)
 	mySocket.on('connect', function() {
 		console.log("connected")
-		mySocket.emit("CBIEN") 	//gởi ký tự CBIEN để yêu cầu cập nhật cảm biến nhiệt độ độ ẩm
+		mySocket.emit("CNCB") 	//gởi ký tự CNCB để yêu cầu cập nhật cảm biến nhiệt độ độ ẩm
 		})
 		
 });
