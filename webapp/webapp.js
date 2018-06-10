@@ -95,7 +95,7 @@ angular.module('IoT', [
 		})
 	//Khi nhận được lệnh P_HOI
 	mySocket.on('P_HOI', function(json) {
-		console.log("recv TRANGTHAIDEN", json)
+		console.log("recv trangthairelay", json)
 		$scope.trangthairelay1 = (json.tt_relay1 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
 		$scope.trangthairelay2 = (json.tt_relay2 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
 		$scope.trangthairelay3 = (json.tt_relay3 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
