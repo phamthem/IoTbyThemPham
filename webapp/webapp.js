@@ -97,7 +97,7 @@ angular.module('IoT', [
 	mySocket.on('P_HOI', function(json) {
 		console.log("recv trangthairelay", json)
 		$scope.trangthairelay1 = (json.tt_relay1 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
-		$scope.trangthairelay2 = (json.tt_relay2 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
+		$scope.trangthairelay2 = (json.tt_relay2 == 1) ? "<img src="http://www.clker.com/cliparts/4/4/5/3/1308930172593232192500px-crystal_clear_app_ktip.svg-hi.png" width="50px" height="50px">" : "Thiết bị này đã TẮT"                          
 		$scope.trangthairelay3 = (json.tt_relay3 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
 		$scope.trangthairelay4 = (json.tt_relay4 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
 		$scope.trangthai4relay = (json.tt_tatca == 1) ? "Hãy kiểm các thiết bị có được BẬT chưa !" : "Hãy kiểm các thiết bị có được TẮT chưa !"
