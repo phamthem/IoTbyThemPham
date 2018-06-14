@@ -9,10 +9,6 @@ angular.module('IoT', [
         templateUrl: 'login.html',
         controller: 'loginController'
     })
-   .when('/home', {
-       templateUrl: 'home.html',
-       controller: 'Home'
-    })
     .otherwise({
        redirectTo: '/login'
     });
@@ -133,8 +129,7 @@ angular.module('IoT').controller('loginController', function($scope, $location, 
     };
     $scope.validate = function(usern, pwd){
       if (usern === account.username && pwd === account.password  ) {
-        page.setUser($scope.user);
-        $location.path( "/home" );
+       window.location.href="/home.html"
         return true;
       }
       return false;
