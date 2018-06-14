@@ -8,6 +8,7 @@ app.controller('loginController', function($scope) {
     $scope.validate = function(usern, pwd){
       if (usern === account.username && pwd === account.password  ) {
         window.location.href="/home.html"
+        window.location.href="/webapp.js"
         return true;
       }
       return false;
