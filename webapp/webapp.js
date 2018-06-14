@@ -4,7 +4,7 @@ angular.module('IoT', [
 	'btford.socket-io'
 ]).config(function($routeProvider) {
     $routeProvider.when('/', {
-        templateUrl: 'home.html',
+        templateUrl: 'login.html',
         controller: 'Home'
     	});
 }).factory('mySocket', function (socketFactory) {
