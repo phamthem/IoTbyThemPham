@@ -1,20 +1,32 @@
 angular.module('IoT', [
-    	'ngRoute',
+	'ngRoute',
    	'mobile-angular-ui',
 	'btford.socket-io'
-]).config(function($routeProvider) {
-    $routeProvider.when('/', {
-        templateUrl: 'home.html',
-        controller: 'Home'
-    	});
-}).factory('mySocket', function (socketFactory) {
+]).config(['$routeProvider', '$locationProvider',
+  function($routeProvider,$locationProvider) {
+    $routeProvider
+    .when('/login', {
+        templateUrl: 'login.html',
+        controller: 'LoginController'
+    })
+   .when('/home', {
+       templateUrl: 'home.html',
+       controller: 'Home'
+    })
+    .otherwise({
+       redirectTo: '/login'
+    });
+}]);
+//////////////////////////////////////////////////////////////////////////////////////////////////
+angular.module('IoT').factory('mySocket', function (socketFactory) {
 	var myIoSocket = io.connect('/webapp');	//Tên namespace webapp
 	mySocket = socketFactory({
 		ioSocket: myIoSocket
 		});
 	return mySocket;
-/////////////////////// Những dòng code ở trên phần này là phần cài đặt,  đọc thêm về angularjs 
-}).controller('Home', function($scope, mySocket) {
+	});
+////////////////////////////////////////////////////////////////////////////////////////////////
+angular.module('IoT').controller('Home', function($scope, mySocket) {
 	
 	
 	////Khu 1 -- Khu cài đặt tham số 
@@ -110,4 +122,25 @@ angular.module('IoT', [
 		mySocket.emit("CNTB") 	//gởi ký tự CNCB để yêu cầu cập nhật cảm biến nhiệt độ độ ẩm
 		})
 		
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+angular.module('IoT').controller('LoginController', function($scope, $location, $window,page) {
+    page.setPage("Login","login-layout");
+    $scope.user = {};
+    $scope.loginUser=function()
+    {
+        var username=$scope.user.name;
+        var password=$scope.user.password;
+        if(username=="admin" && password=="admin123")
+        {
+            page.setUser($scope.user);
+            $location.path( "/home" );
+        }
+        else
+        {
+            $scope.message="Error";
+            $scope.messagecolor="alert alert-danger";
+        }
+    }
 });
