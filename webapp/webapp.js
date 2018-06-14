@@ -1,11 +1,11 @@
-angular.module('IoT', [
+var app = angular.module('IoT', [
     	'ngRoute',
    	'mobile-angular-ui',
 	'btford.socket-io'
 ]).config(function($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'login.html',
-        controller: 'Home'
+        controller: 'loginController'
     	});
 }).factory('mySocket', function (socketFactory) {
 	var myIoSocket = io.connect('/webapp');	//Tên namespace webapp
@@ -14,22 +14,30 @@ angular.module('IoT', [
 		});
 	return mySocket;
 /////////////////////// Những dòng code ở trên phần này là phần cài đặt,  đọc thêm về angularjs 
-}).controller('Home', function($scope, mySocket) {
-	
+})
 
-	$scope.name = "John Doe";
-	var account = {
-	username : 'admin',
-	password : 'admin'
-	};
-	$scope.validate = function(usern, pwd){
-		if (usern === account.username && pwd === account.password  ) {
-			window.location.href="/home.html"
-			return true;
-			}
-		return false;
-		}
 
+
+app.controller('loginController', function($scope) {
+    $scope.name = "John Doe";
+    var account = {
+      username : 'admin',
+      password : 'admin'
+    };
+    $scope.validate = function(usern, pwd){
+      if (usern === account.username && pwd === account.password  ) {
+        window.location.href="/home.html"
+        window.location.href="/index.html"
+        return true;
+      }
+      return false;
+    }
+
+});
+
+
+
+app.controller('Home', function($scope, mySocket) {
 	
 	////Khu 1 -- Khu cài đặt tham số 
     	//cài đặt một số tham số test chơi
