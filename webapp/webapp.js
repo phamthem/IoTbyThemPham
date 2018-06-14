@@ -7,7 +7,7 @@ angular.module('IoT', [
     $routeProvider
     .when('/login', {
         templateUrl: 'login.html',
-        controller: 'LoginController'
+        controller: 'loginController'
     })
    .when('/home', {
        templateUrl: 'home.html',
@@ -125,7 +125,7 @@ angular.module('IoT').controller('Home', function($scope, mySocket) {
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-angular.module('IoT').controller('loginController', function($scope) {
+angular.module('IoT').controller('loginController', function($scope, $location, $window,page) {
     $scope.name = "John Doe";
     var account = {
       username : 'admin',
@@ -133,8 +133,8 @@ angular.module('IoT').controller('loginController', function($scope) {
     };
     $scope.validate = function(usern, pwd){
       if (usern === account.username && pwd === account.password  ) {
-        window.location.href="/home.html"
-        window.location.href="/index.html"
+        page.setUser($scope.user);
+        $location.path( "/home" );
         return true;
       }
       return false;
