@@ -1,40 +1,44 @@
-<!DOCTYPE html>
-<html ng-app="IoT">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
-</head>
-
-
-<body ng-controller="loginController">
-    <div class="col-md-6 offset-md-3">
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" class="form-control" type="text" placeholder="email@mail.com" ng-model="user" /required>
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input id="password" type="password" class="form-control" placeholder="123456789" ng-model="pd" /required>
-        </div>
-        <div class="form-group">
-            <input type="button" class="btn btn-primary" ng-click="validate(user,pd)" value="Login"></input>
-        </div>
-        <div ng-show="validate(username,password)">
-            <div class="alert alert-success" role="alert">
-                A simple success alert—check it out!
-            </div>
-        </div>
+<div class="container" ng-app="myApp">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="page-header">
+        <h1>{{ title }}</h1>
+      </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="webapp.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-</body>
+    
+    <div ui-view></div>
+    
+  </div>
+  
+  <script type="text/ng-template" id="login.html">
+    <div class="col-md-12">
+      <h3>Login Page</h3>
+      
+      <form ng-submit="formSubmit()" class="form">
+        <div class="col-md-4">
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="username" placeholder="username" required=""/>
+          </div> 
 
-</html>
+          <div class="form-group">
+            <input type="password" class="form-control" ng-model="password" placeholder="password" required=""/>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-success">Login</button>
+            <span class="text-danger">{{ error }}</span>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </script>
+  
+  <script type="text/ng-template" id="home.html">
+    <div class="col-md-12">
+      <h3>Home Page</h3>
+    
+      <a ui-sref="login">Back</a>
+    </div>
+  </script>
+</div>
