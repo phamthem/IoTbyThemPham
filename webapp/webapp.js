@@ -2,14 +2,30 @@ angular.module('IoT', [
     	'ngRoute',
    	'mobile-angular-ui',
 	'btford.socket-io'
-	"Service.MyAuth",
-  	"Service.MyLocalStorage"
-]).config(function($routeProvider) {
-    $routeProvider.when('/', {
-        templateUrl: 'home.html',
-        controller: 'Home'
-    	});
-}).factory('mySocket', function (socketFactory) {
+	])
+.config(["$routeProvider", function($routeProvider)
+ 	$routeProvider
+		.when('/', {
+		templateUrl: "<div>bạn phải đăng nhập để điều khiển</div>",
+		requireLogin: true,
+      		requirePermission: ["admin"]
+		})
+		.when("/login", {
+		templateUrl: "login.html",
+		controller: "login"
+		})
+		.otherwise("/login");
+	}])
+.run(["$rootScope", "$translate", "$location", "MyAuth", function($rootScope, $translate, $location, MyAuth) {
+    $rootScope.$on('$routeChangeStart', function (event, next) {
+ 
+      if(!MyAuth.checkPermission(next)) {
+        $location.path("/login");
+      }
+    });
+}])
+
+.factory('mySocket', function (socketFactory) {
 	var myIoSocket = io.connect('/webapp');	//Tên namespace webapp
 	mySocket = socketFactory({
 		ioSocket: myIoSocket
