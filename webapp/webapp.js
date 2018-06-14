@@ -5,7 +5,7 @@ angular.module('IoT', [
 ]).config(function($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'login.html',
-        controller: 'Home'
+        controller: 'login.js'
     	});
 }).factory('mySocket', function (socketFactory) {
 	var myIoSocket = io.connect('/webapp');	//Tên namespace webapp
