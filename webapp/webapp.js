@@ -2,6 +2,8 @@ angular.module('IoT', [
     	'ngRoute',
    	'mobile-angular-ui',
 	'btford.socket-io'
+	"Service.MyAuth",
+  	"Service.MyLocalStorage"
 ]).config(function($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'home.html',
