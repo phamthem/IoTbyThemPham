@@ -4,7 +4,7 @@ angular.module('IoT', [
 	'btford.socket-io'
 ]).config(function($routeProvider) {
     $routeProvider.when('/', {
-        templateUrl: 'home.html',
+        templateUrl: 'login.html',
         controller: 'Home'
     	});
 }).factory('mySocket', function (socketFactory) {
@@ -16,6 +16,21 @@ angular.module('IoT', [
 /////////////////////// Những dòng code ở trên phần này là phần cài đặt,  đọc thêm về angularjs 
 }).controller('Home', function($scope, mySocket) {
 	
+
+	$scope.name = "John Doe";
+		var account = {
+		username : 'admin',
+		password : 'admin'
+		};
+	$scope.validate = function(usern, pwd){
+		if (usern === account.username && pwd === account.password  ) {
+			window.location.href="/home.html"
+			window.location.href="/index.html"
+			return true;
+			}
+		return false;
+		}
+
 	
 	////Khu 1 -- Khu cài đặt tham số 
     	//cài đặt một số tham số test chơi
