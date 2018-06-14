@@ -22,8 +22,8 @@ var app = angular.module('IoT', [
 	};
 	$scope.validate = function(usern, pwd){
 	if (usern === account.username && pwd === account.password  ) {
-		window.location.href="/home.html"
 		window.location.href="/index.html"
+		window.location.href="/home.html"
 		return true;
 		}
 	return false;
