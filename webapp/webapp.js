@@ -1,28 +1,20 @@
 angular.module('IoT', [
-	'ngRoute',
+    	'ngRoute',
    	'mobile-angular-ui',
 	'btford.socket-io'
-]).config(['$routeProvider', '$locationProvider',
-  function($routeProvider,$locationProvider) {
-    $routeProvider
-    .when('/login', {
-        templateUrl: 'login.html',
-        controller: 'loginController'
-    })
-    .otherwise({
-       redirectTo: '/login'
-    });
-}]);
-//////////////////////////////////////////////////////////////////////////////////////////////////
-angular.module('IoT').factory('mySocket', function (socketFactory) {
+]).config(function($routeProvider) {
+    $routeProvider.when('/', {
+        templateUrl: 'home.html',
+        controller: 'Home'
+    	});
+}).factory('mySocket', function (socketFactory) {
 	var myIoSocket = io.connect('/webapp');	//Tên namespace webapp
 	mySocket = socketFactory({
 		ioSocket: myIoSocket
 		});
 	return mySocket;
-	});
-////////////////////////////////////////////////////////////////////////////////////////////////
-angular.module('IoT').controller('Home', function($scope, mySocket) {
+/////////////////////// Những dòng code ở trên phần này là phần cài đặt,  đọc thêm về angularjs 
+}).controller('Home', function($scope, mySocket) {
 	
 	
 	////Khu 1 -- Khu cài đặt tham số 
@@ -118,21 +110,4 @@ angular.module('IoT').controller('Home', function($scope, mySocket) {
 		mySocket.emit("CNTB") 	//gởi ký tự CNCB để yêu cầu cập nhật cảm biến nhiệt độ độ ẩm
 		})
 		
-});
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-angular.module('IoT').controller('loginController', function($scope, $location, $window,page) {
-    $scope.name = "John Doe";
-    var account = {
-      username : 'admin',
-      password : 'admin'
-    };
-    $scope.validate = function(usern, pwd){
-      if (usern === account.username && pwd === account.password  ) {
-       window.location.href="/home.html"
-        return true;
-      }
-      return false;
-    }
-
 });
