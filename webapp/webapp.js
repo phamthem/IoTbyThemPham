@@ -126,19 +126,23 @@ angular.module('IoT').controller('Home', function($scope, mySocket) {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 angular.module('IoT').controller('LoginController', function($scope, $location, $window,page) {
-	$scope.name = "John Doe";
-    	var account = {
-      	username : 'admin',
-      	password : 'admin'
-    	};
-    	$scope.validate = function(usern, pwd){
-      		if (usern === account.username && pwd === account.password  ) {
-            	$location.path( "/home" );
-        	return true;
-      		}
-      	return false;
-   	}
-
+    page.setPage("Login","login-layout");
+    $scope.user = {};
+    $scope.loginUser=function()
+    {
+        var username=$scope.user.name;
+        var password=$scope.user.password;
+        if(username=="admin" && password=="admin123")
+        {
+            page.setUser($scope.user);
+            $location.path( "/home" );
+        }
+        else
+        {
+            $scope.message="Error";
+            $scope.messagecolor="alert alert-danger";
+        }
+    }
 });
 	
 	
