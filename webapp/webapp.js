@@ -1,8 +1,10 @@
 angular.module('IoT', [
     	'ngRoute',
    	'mobile-angular-ui',
-	'btford.socket-io'
-	 "User.DangNhap.Ctrl",
+	'btford.socket-io',
+	'User.DangNhap.Ctrl',
+	'Service.MyAuth',
+  	'Service.MyLocalStorage'
 	])
 .config(["$routeProvider", function($routeProvider)
  	$routeProvider
