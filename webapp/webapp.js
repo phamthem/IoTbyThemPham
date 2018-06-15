@@ -4,10 +4,14 @@ angular.module('IoT', [
 	'btford.socket-io'
 ])
 .config(function($routeProvider) {
-    $routeProvider.when('/', {
+    $routeProvider
+	.when('/', {
         templateUrl: 'login.html',
         controller: 'Home'
-    	});
+    	})
+	.otherwise({
+	redirect: '/'
+	});
 })
 .factory('mySocket', function (socketFactory) {
 	var myIoSocket = io.connect('/webapp');	//Tên namespace webapp
