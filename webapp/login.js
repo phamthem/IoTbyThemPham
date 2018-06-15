@@ -4,7 +4,7 @@ angular.module('IoT', [
     'mobile-angular-ui',
     'btford.socket-io'
     ])
-.controller('Home', function($scope, mySocket) {
+.controller('login', function($scope, mySocket) {
 	$scope.name = "John Doe";
 		var account = {
 		username : 'admin',
