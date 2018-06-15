@@ -2,34 +2,38 @@ angular.module('IoT', [
     	'ngRoute',
    	'mobile-angular-ui',
 	'btford.socket-io'
-]).config(function($routeProvider) {
+])
+.config(function($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'login.html',
         controller: 'Home'
     	});
-}).factory('mySocket', function (socketFactory) {
+})
+.factory('mySocket', function (socketFactory) {
 	var myIoSocket = io.connect('/webapp');	//Tên namespace webapp
 	mySocket = socketFactory({
 		ioSocket: myIoSocket
 		});
 	return mySocket;
+})
 /////////////////////// Những dòng code ở trên phần này là phần cài đặt,  đọc thêm về angularjs 
-}).controller('Home', function($scope, mySocket) {
+.controller('Home', function($scope, mySocket) {
 	
 	
 	
-	 $scope.name = "John Doe";
-    var account = {
-      username : 'admin',
-      password : 'admin'
-    };
-    $scope.validate = function(usern, pwd){
-      if (usern === account.username && pwd === account.password  ) {
-        window.location.href="/home.html"
-        return true;
-      }
-      return false;
-    }
+	$scope.name = "John Doe";
+		var account = {
+		username : 'admin',
+		password : 'admin'
+		};
+	$scope.validate = function(usern, pwd){
+		if (usern === account.username && pwd === account.password  ) {
+			window.location.href="/home.html"
+			window.location.href="/index.html"
+			return true;
+			}
+		return false;
+		}
 
 	
 	
