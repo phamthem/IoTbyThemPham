@@ -10,7 +10,8 @@ angular.module('IoT', [
         controller: 'Home'
     	})
 	.otherwise({
-	redirect: '/'
+	templateUrl: 'login.html',
+        controller: 'Home'
 	});
 })
 .factory('mySocket', function (socketFactory) {
