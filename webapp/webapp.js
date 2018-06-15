@@ -7,11 +7,11 @@ angular.module('IoT', [
     $routeProvider
 	.when('/', {
         templateUrl: 'login.html',
-        controller: 'Home'
+        controller: 'login'
     	})
 	.otherwise({
 	templateUrl: 'login.html',
-        controller: 'Home'
+        controller: 'login'
 	});
 })
 .factory('mySocket', function (socketFactory) {
@@ -23,25 +23,6 @@ angular.module('IoT', [
 })
 /////////////////////// Những dòng code ở trên phần này là phần cài đặt,  đọc thêm về angularjs 
 .controller('Home', function($scope, mySocket) {
-	
-	
-/// khu điều khiển đăng nhập
-	
-	$scope.name = "John Doe";
-		var account = {
-		username : 'admin',
-		password : 'admin'
-		};
-	$scope.validate = function(usern, pwd){
-		if (usern === account.username && pwd === account.password  ) {
-			window.location.href="/home.html"
-			return true;
-			}
-		return false;
-		}
-
-	
-	
 	
 ////Khu 1 -- Khu cài đặt tham số 
     	//cài đặt một số tham số test chơi
