@@ -21,7 +21,21 @@ angular.module('IoT', [
 		});
 	return mySocket;
 })
-/////////////////////// Những dòng code ở trên phần này là phần cài đặt,  đọc thêm về angularjs 
+.controller('login', function($scope, mySocket) {
+	$scope.name = "John Doe";
+	var account = {
+		username : 'admin',
+		password : 'admin'
+		};
+	$scope.validate = function(usern, pwd){
+		if (usern === account.username && pwd === account.password  ) {
+			window.location.href="/home.html"
+			return true;
+			}
+		return false;
+		}
+})
+
 .controller('Home', function($scope, mySocket) {
 	
 ////Khu 1 -- Khu cài đặt tham số 
