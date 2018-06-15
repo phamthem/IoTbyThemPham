@@ -20,6 +20,7 @@ angular.module('IoT', [
 .controller('Home', function($scope, mySocket) {
 	
 	
+/// khu điều khiển đăng nhập
 	
 	$scope.name = "John Doe";
 		var account = {
@@ -29,7 +30,6 @@ angular.module('IoT', [
 	$scope.validate = function(usern, pwd){
 		if (usern === account.username && pwd === account.password  ) {
 			window.location.href="/home.html"
-			window.location.href="/index.html"
 			return true;
 			}
 		return false;
@@ -38,7 +38,7 @@ angular.module('IoT', [
 	
 	
 	
-	////Khu 1 -- Khu cài đặt tham số 
+////Khu 1 -- Khu cài đặt tham số 
     	//cài đặt một số tham số test chơi
 	//dùng để đặt các giá trị mặc định
     	$scope.nhietdo = "Chưa kết nối";
