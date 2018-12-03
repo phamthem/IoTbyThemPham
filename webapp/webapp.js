@@ -51,7 +51,7 @@ angular.module('IoT', [
 	
 	
 //khu do thi	
-	$(function () {
+	$scope.(function () {
     Highcharts.chart(\'chart1\', {
         title: {
             text: \'This is my first chart\',
