@@ -34,23 +34,6 @@
 			<div class="scrollable-content">
 				<div class="list-group text-center">
 					
-		
-					
-			<ng-gauge 
-				  size="200" 
-				  type="semi" 
-				  thick="8" 
-				  min="0" 
-				  max="120" 
-				  value="30" 
-				  cap="round" 
-				  label="NHIỆT ĐỘ"  
-				  foreground-color="#ffcc66" 
-				  background-color="rgba(255,255,255, 0.4)" 
-				  append="Độ C">
-			</ng-gauge>		
-					
-					
 
 		 <!-- 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 -->			
 					<!-- #########################cục giới thiệu -->
@@ -65,6 +48,21 @@
 						<div>
 							<h3 class="home-heading"><span style="color: purple">NHIỆT ĐỘ</span><span style="color: orange"> và</span><span style="color: purple"> ĐỘ ẨM</span> <span style="color: orange">tại vườn</span></h3>
 							<h4 class="home-heading">Nhiệt độ lúc này là:</h4>
+							
+							<ng-gauge 
+							size="200" 
+							type="semi" 
+							thick="8" 
+							min="0" 
+							max="120" 
+							value="30" 
+							cap="round" 
+							label="NHIỆT ĐỘ"  
+							foreground-color="#ffcc66" 
+							background-color="rgba(255,255,255, 0.4)" 
+							append="Độ C">
+							</ng-gauge>
+							
 							<span style="color: brown"><b>{{nhietdo}}</b>__(độ C)</span>
 							<h4 class="home-heading">Độ ẩm lúc này là:</h4>
 							<span style="color: brown"><b>{{doam}}</b>__(%)</span>
