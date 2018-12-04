@@ -49,6 +49,7 @@
 							<h3 class="home-heading"><span style="color: purple">NHIỆT ĐỘ</span><span style="color: orange"> và</span><span style="color: purple"> ĐỘ ẨM</span> <span style="color: orange">tại vườn</span></h3>
 							<h4 class="home-heading">Nhiệt độ lúc này là:</h4>
 							<span style="color: brown"><b>{{nhietdo}}</b>__(độ C)</span>
+							<!-- đồ thị -->
 							<div>
 								<br>
 								<ng-gauge 
@@ -62,7 +63,11 @@
 								label="NHIỆT ĐỘ"  
 								foreground-color="#ffcc66" 
 								background-color="rgba(255,255,255, 0.4)" 
-								append="_Độ C">
+								append="_Độ C"
+							  	thresholds=
+									'0': {color: 'green'},
+									'40': {color: 'orange'},
+									'75.5': {color: 'red'}>
 								</ng-gauge>
 								<br>
 							</div>
