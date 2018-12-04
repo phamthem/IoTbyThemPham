@@ -51,19 +51,28 @@ angular.module('IoT', [
 	$scope.trangthai4relay = "Chưa kết nối";
 	
 
+////do thi	
+	
+	$scope.events = {
+	dataplotclick: function(ev, props) {
+	    $scope.$apply(function() {
+		$scope.colorValue = 'background-color:' + props.categoryLabel + ';';
+		$scope.selectedValue = 'Đây là ' + props.categoryLabel + '!';
+	    });
+	}
+	};	
 	
 	
-	
- $scope.dataSource = {
-        'chart': {
-            'caption': 'Chart + Angular!',
-            'captionFontSize': '30',
-        },
-        'data': [{
-            'label': 'Tiền lương',
-            'value': '10'
-        }]
-    };
+	$scope.dataSource = {
+	'chart': {
+	    'caption': 'Chart + Angular!',
+	    'captionFontSize': '30',
+	},
+	'data': [{
+	    'label': 'Tiền lương',
+	    'value': '10'
+	}]
+	};
 	
 	
 	
