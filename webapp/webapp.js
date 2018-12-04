@@ -63,7 +63,16 @@ angular.module('IoT', [
             'value': '10'
         },
     };
-	
+	 $scope.selectedValue = 'Click vào cột nào đó.';
+
+    $scope.events = {
+        dataplotclick: function(ev, props) {
+            $scope.$apply(function() {
+                $scope.colorValue = 'background-color:' + props.categoryLabel + ';';
+                $scope.selectedValue = 'Đây là ' + props.categoryLabel + '!';
+            });
+        }
+    };
 	
 	
 //khu 2 -- gởi json về cho index.js đển chuyển về cho arduino
