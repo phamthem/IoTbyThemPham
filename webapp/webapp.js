@@ -53,17 +53,6 @@ angular.module('IoT', [
 
 ////do thi	
 
-	var threshold = {
-	'0': {color: 'green'},
-	'40': {color: 'orange'},
-	'75.5': {color: 'red'}
-	};
-	
-	
-	
-	
-	
-	
 	
 //khu 2 -- gởi json về cho index.js đển chuyển về cho arduino
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
