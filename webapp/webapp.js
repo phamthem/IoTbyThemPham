@@ -52,14 +52,17 @@ angular.module('IoT', [
 	
 	
 //khu do thi	
-	
-	
-	
-	
-	
-	
-	
-	
+	$scope.dataSource = {
+        'chart': {
+            'caption': 'Chart + Angular!',
+            'captionFontSize': '30',
+
+        },
+        'data': [{
+            'label': 'Tiền lương',
+            'value': '10'
+        },
+    };
 	
 	
 	
