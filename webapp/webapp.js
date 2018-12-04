@@ -52,6 +52,23 @@ angular.module('IoT', [
 	
 
 	
+	
+	
+ $scope.dataSource = {
+        'chart': {
+            'caption': 'Chart + Angular!',
+            'captionFontSize': '30',
+        },
+        'data': [{
+            'label': 'Tiền lương',
+            'value': '10'
+        }]
+    };
+	
+	
+	
+	
+	
 //khu 2 -- gởi json về cho index.js đển chuyển về cho arduino
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
 	$scope.dongrelay1 = function() {
