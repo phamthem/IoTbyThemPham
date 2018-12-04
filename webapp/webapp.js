@@ -1,7 +1,8 @@
 angular.module('IoT', [
     	'ngRoute',
    	'mobile-angular-ui',
-	'btford.socket-io'
+	'btford.socket-io',
+	'ng-fusioncharts'         //modul đồ thị
 ])
 .config(function($routeProvider) {
     $routeProvider
@@ -51,7 +52,6 @@ angular.module('IoT', [
 	
 	
 //khu do thi	
-	
 	
 	
 	
