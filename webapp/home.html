@@ -18,18 +18,10 @@
 		<script src="/socket.min.js"></script>
 		<script src="/webapp.js"></script>
 		
-		
-		
 		<!-- thư viện đồ thị-->	
 		<script src="/angular.min.js"></script> 
   		<script src="/angularjs-gauge.js"></script> 
 		
-			var threshold = {
-	'0': {color: 'green'},
-	'40': {color: 'orange'},
-	'75.5': {color: 'red'}
-	};
-	
 		
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 		</head>
@@ -62,8 +54,8 @@
 								type="semi" 
 								thick="20" 
 								min="0" 
-								max="120" 
-								value="30" 
+								max="100" 
+								value="{{nhietdo}}" 
 								cap="round" 
 								label="Nhiệt độ"  
 								foreground-color="red" 
