@@ -53,7 +53,11 @@ angular.module('IoT', [
 
 ////do thi	
 
-	
+	var threshold = {
+	'0': {color: 'green'},
+	'40': {color: 'orange'},
+	'75.5': {color: 'red'}
+	};
 	
 	
 	
