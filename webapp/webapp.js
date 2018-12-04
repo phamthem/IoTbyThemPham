@@ -2,7 +2,7 @@ angular.module('IoT', [
     	'ngRoute',
    	'mobile-angular-ui',
 	'btford.socket-io',
-	'ng-fusioncharts'         //modul đồ thị
+	'angularjs-gauge'         //modul đồ thị
 ])
 .config(function($routeProvider) {
     $routeProvider
@@ -52,27 +52,10 @@ angular.module('IoT', [
 	
 
 ////do thi	
-	
-	$scope.events = {
-	dataplotclick: function(ev, props) {
-	    $scope.$apply(function() {
-		$scope.colorValue = 'background-color:' + props.categoryLabel + ';';
-		$scope.selectedValue = 'Đây là ' + props.categoryLabel + '!';
-	    });
-	}
-	};	
+
 	
 	
-	$scope.dataSource = {
-	'chart': {
-	    'caption': 'Chart + Angular!',
-	    'captionFontSize': '30',
-	},
-	'data': [{
-	    'label': 'Tiền lương',
-	    'value': '10'
-	}]
-	};
+	
 	
 	
 	
