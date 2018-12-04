@@ -35,17 +35,18 @@
 	</head>
 		
 		<body ng-app="IoT">
+		<fusioncharts
+		width="100%"
+		height="400"
+		type="column2d"
+		dataFormat="json"
+		dataSource= 5>
+		</fusioncharts>	
+			
 		<div class="app">
 			<!-- App body -->
 			<div class='app-body'>
 				<div class='app-content'><ng-view></ng-view></div>
-				<fusioncharts
-				width="100%"
-				height="400"
-				type="column2d"
-				dataFormat="json"
-				dataSource="{{doam}}">
-				</fusioncharts>
 			</div>
 		</div>
 		<!-- ~ .app -->
