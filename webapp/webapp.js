@@ -25,8 +25,8 @@ angular.module('IoT', [
 .controller('login', function($scope, mySocket) {
 	$scope.name = "John Doe";
 	var account = {
-		username : 'admin',
-		password : 'admin'
+		username : 'phamthem',
+		password : 'iot'
 		};
 	$scope.validate = function(usern, pwd){
 		if (usern === account.username && pwd === account.password  ) {
