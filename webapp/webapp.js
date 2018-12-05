@@ -22,7 +22,7 @@ angular.module('IoT', [
 		});
 	return mySocket;
 })
-.controller('login', function($rootscope,$scope, mySocket) {
+.controller('login', function($rootscope, $scope, mySocket) {
 	$scope.name = "John Doe";
 	var account = {
 		username : 'phamthem',
