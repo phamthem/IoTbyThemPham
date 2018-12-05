@@ -32,7 +32,7 @@ angular.module('IoT', [
 		if (usern === account.username && pwd === account.password  ) {
 			window.location.href="/home.html"
 			return true;
-			$rootscope.khoa = 1;
+			$rootscope.khoa = "loz";
 			}
 		return false;
 		}
