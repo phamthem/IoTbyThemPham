@@ -39,6 +39,8 @@ angular.module('IoT', [
 
 .controller('Home', function($scope, mySocket) {
 	
+	console.log("xxxxxxxxxxx ", account.username)
+	
 ////Khu 1 -- Khu cài đặt tham số 
     	//cài đặt một số tham số test chơi
 	//dùng để đặt các giá trị mặc định
