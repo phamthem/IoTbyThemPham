@@ -37,7 +37,7 @@ angular.module('IoT', [
 		}
 })
 
-.controller('Home', function($rootscope, $scope, mySocket) {
+.controller('Home', function($scope, mySocket) {
 	
 	
 	
