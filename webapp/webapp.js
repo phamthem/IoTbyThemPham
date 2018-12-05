@@ -31,6 +31,7 @@ angular.module('IoT', [
 	$scope.validate = function(usern, pwd){
 		if (usern === account.username && pwd === account.password  ) {
 			window.location.href="/home.html"
+			var loz = 1;
 			return true;
 			}
 		return false;
@@ -39,7 +40,7 @@ angular.module('IoT', [
 
 .controller('Home', function($scope, mySocket) {
 	
-	console.log("validate")
+	console.log(loz)
 	
 ////Khu 1 -- Khu cài đặt tham số 
     	//cài đặt một số tham số test chơi
