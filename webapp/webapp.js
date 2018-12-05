@@ -22,25 +22,24 @@ angular.module('IoT', [
 		});
 	return mySocket;
 })
-.controller('login', function($scope, mySocket) {
+.controller('login', function($rootscope, mySocket) {
 	$scope.name = "John Doe";
 	var account = {
 		username : 'phamthem',
 		password : 'iot'
 		};
-	$scope.validate = function(usern, pwd){
+	$rootscope.validate = function(usern, pwd){
 		if (usern === account.username && pwd === account.password  ) {
 			window.location.href="/home.html"
-			var loz = 1;
 			return true;
 			}
 		return false;
 		}
 })
 
-.controller('Home', function($scope, mySocket) {
+.controller('Home', function($rootscope, $scope, mySocket) {
 	
-	console.log(loz)
+	console.log(validate)
 	
 ////Khu 1 -- Khu cài đặt tham số 
     	//cài đặt một số tham số test chơi
