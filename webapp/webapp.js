@@ -22,13 +22,13 @@ angular.module('IoT', [
 		});
 	return mySocket;
 })
-.controller('login', function($rootscope, $scope, mySocket) {
+.controller('login', function($scope, mySocket) {
 	$scope.name = "John Doe";
 	var account = {
 		username : 'phamthem',
 		password : 'iot'
 		};
-	$rootscope.validate = function(usern, pwd){
+	$scope.validate = function(usern, pwd){
 		if (usern === account.username && pwd === account.password  ) {
 			window.location.href="/home.html"
 			return true;
