@@ -22,7 +22,7 @@ angular.module('IoT', [
 		});
 	return mySocket;
 })
-.controller('login', function($scope, $rootscope, mySocket) {
+.controller('login', function($scope, mySocket) {
 	$scope.name = "John Doe";
 	var account = {
 		username : 'phamthem',
@@ -32,7 +32,6 @@ angular.module('IoT', [
 		if (usern === account.username && pwd === account.password  ) {
 			window.location.href="/home.html"
 			return true;
-			$rootscope.khoa = "loz";
 			}
 		return false;
 		}
