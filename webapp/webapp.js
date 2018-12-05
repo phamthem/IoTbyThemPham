@@ -39,7 +39,7 @@ angular.module('IoT', [
 
 .controller('Home', function($scope, mySocket) {
 	
-	console.log(validate)
+	console.log("validate")
 	
 ////Khu 1 -- Khu cài đặt tham số 
     	//cài đặt một số tham số test chơi
