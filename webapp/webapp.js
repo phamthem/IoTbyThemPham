@@ -30,7 +30,8 @@ angular.module('IoT', [
 		};
 	$scope.validate = function(usern, pwd){
 		if (usern === account.username && pwd === account.password  ) {
-			window.location.href="/home.html"
+			window.location.href="/home.html";
+			document.cookie = "should_hide_login_form";
 			return true;
 			}
 		return false;
@@ -39,7 +40,25 @@ angular.module('IoT', [
 
 .controller('Home', function($scope, mySocket) {
 	
+getCookie = function() {
+	const decodedCookie = decodeURIComponent(document.cookie);
+	const ca = decodedCookie.split(';');
+	for (let i = 0; i < ca.length; i += 1) {
+		let c = ca[i];
+		while (c.charAt(0) === ' ') {
+		c = c.substring(1);
+		}
+		if (c.indexOf('should_hide_login_form') === 0) {
+		return true;
+		}
+	}
+	return false;
+};
 	
+if (!getCookie()) {
+	window.location.href="/login.html";
+}
+		
 	
 ////Khu 1 -- Khu cài đặt tham số 
     	//cài đặt một số tham số test chơi
