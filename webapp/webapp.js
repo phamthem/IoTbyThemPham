@@ -56,7 +56,7 @@ getCookie = function() {
 };
 	
 if (!getCookie()) {
-	window.location.href="/login.html";
+	window.location.href="/";
 }
 		
 	
