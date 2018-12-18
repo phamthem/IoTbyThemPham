@@ -1,20 +1,14 @@
-
- 	
-	
-				
-		
-				
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
 <div class="container">
     <div class="row">
         <div class="col-md-offset-5 col-md-3">
-            <div class="form-login">
-            <h4>Welcome back.</h4>
-         			<div class="form-group">
+		       	
+
+				<div class="list-group text-center"> 
+					<h1 class="home-heading"><BR><BR><span style="color: white">ĐĂNG NHẬP VÀO HỆ THỐNG</span></h1>
+
+				</div>
+
+				<div class="form-group">
 					<label for="email"><span style="color: white">Email</span></label>
 					<input id="email" class="form-control" type="text" placeholder="email@mail.com" ng-model="user" /required>
 				</div>
@@ -22,23 +16,15 @@
 					<label for="password"><span style="color: white">Mật khẩu</span></label>
 					<input id="password" type="password" class="form-control" placeholder="123456789" ng-model="pd" /required>
 				</div>
-		    
-            <div class="wrapper">
-            <span class="group-btn">     
-               <input type="button" class="btn btn-primary" ng-click="validate(user,pd)" value="Login"></input>
-            </span>
-            </div>
-            </div>
-        
-        </div>
+				<div class="form-group">
+					<input type="button" class="btn btn-primary" ng-click="validate(user,pd)" value="Login"></input>
+				</div>
+				<div ng-show="validate(username,password)">
+					<div class="alert alert-success" role="alert">
+						A simple success alert—check it out!
+					</div>
+				</div>
+           	
+	</div>
     </div>
-</div>		
-				
-			   	
-		
-
-
-
-
-
-
+</div>
