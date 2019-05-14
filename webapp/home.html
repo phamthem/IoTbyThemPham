@@ -58,6 +58,23 @@
 							  	thresholds="threshold">
 								</ng-gauge>
 								<br>
+								
+								<br>
+								<ng-gauge 
+								size="300" 
+								type="semi" 
+								thick="20" 
+								min="0" 
+								max="100" 
+								value=doam
+								cap="round" 
+								label="Độ ẩm"  
+								foreground-color="red" 
+								background-color="green" 
+								append=".%"
+							  	thresholds="threshold">
+								</ng-gauge>
+								<br>
 							</div>
 							<h4 class="home-heading">Độ ẩm lúc này là:</h4>
 							<span style="color: brown"><b>{{doam}}</b>__(%)</span>
