@@ -68,7 +68,6 @@ if (!getCookie()) {
 	$scope.trangthairelay1 = "Chưa kết nối";
 	$scope.trangthairelay2 = "Chưa kết nối";
 	$scope.trangthairelay3 = "Chưa kết nối";
-	$scope.trangthairelay4 = "Chưa kết nối";
 	$scope.trangthai4relay = "Chưa kết nối";
 	
 
@@ -104,15 +103,6 @@ if (!getCookie()) {
 		mySocket.emit("NRL3")		//gởi chuỗi về arduino
 		}
 	//////////////////////////////////////////////////////////////
-	$scope.dongrelay4 = function() {
-		console.log("ham dongrelay4 duoc thuc thi")
-		mySocket.emit("DRL4")		//gởi chuỗi về arduino
-		}
-	$scope.ngatrelay4 = function() {
-		console.log("ham ngatrelay4 duoc thuc thi")
-		mySocket.emit("NRL4")		//gởi chuỗi về arduino
-		}
-	///////////////////////////////////////////////////////////////
 	$scope.dong4relay = function() {
 		console.log("ham dong4relay duoc thuc thi")
 		mySocket.emit("DTC")		//gởi chuỗi về arduino
@@ -145,7 +135,6 @@ if (!getCookie()) {
 		$scope.trangthairelay1 = (json.tt_relay1 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
 		$scope.trangthairelay2 = (json.tt_relay2 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
 		$scope.trangthairelay3 = (json.tt_relay3 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
-		$scope.trangthairelay4 = (json.tt_relay4 == 1) ? "Thiết bị này đã BẬT" : "Thiết bị này đã TẮT"
 		$scope.trangthai4relay = (json.tt_tatca == 1) ? "Hãy kiểm các thiết bị có được BẬT chưa !" : "Hãy kiểm các thiết bị có được TẮT chưa !"
 		})
 	
